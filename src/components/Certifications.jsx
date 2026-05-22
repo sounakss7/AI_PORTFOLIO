@@ -33,7 +33,7 @@ const Certifications = () => {
             key={idx}
             initial={{ opacity: 0, x: idx === 0 ? -20 : 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6, delay: idx * 0.2 }}
             className="flex items-start gap-6 border-l-2 border-border-subtle pl-6 hover:border-accent-cyan transition-colors group"
           >

@@ -34,7 +34,7 @@ const Education = () => {
             key={idx}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6, delay: idx * 0.15 }}
             className="p-8 bg-surface border border-border-subtle flex flex-col justify-between h-full relative overflow-hidden group hover:border-accent-cyan transition-colors"
           >

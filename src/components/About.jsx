@@ -5,7 +5,7 @@ const SectionHeader = ({ title }) => (
   <motion.h2
     initial={{ clipPath: 'inset(0 100% 0 0)' }}
     whileInView={{ clipPath: 'inset(0 0% 0 0)' }}
-    viewport={{ once: true, margin: "-100px" }}
+    viewport={{ once: true, amount: 0.1 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
     className="font-heading text-4xl md:text-5xl text-text-primary mb-16 pb-4 border-b border-border-subtle inline-block pr-12"
   >
@@ -24,7 +24,7 @@ const About = () => {
           className="lg:col-span-7"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8 }}
         >
           <blockquote className="font-display text-3xl md:text-4xl lg:text-5xl text-text-primary leading-tight relative">
@@ -38,7 +38,7 @@ const About = () => {
           className="lg:col-span-5 text-text-muted font-sans text-base leading-relaxed space-y-6"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <p>
@@ -55,7 +55,7 @@ const About = () => {
         className="mt-20 pt-8 border-t border-border-subtle"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
+        viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.6 }}
       >
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">

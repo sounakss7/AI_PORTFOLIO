@@ -30,7 +30,7 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6 }}
           className="bg-obsidian border border-border-subtle p-6 rounded-md font-code text-sm text-text-muted overflow-x-auto relative"
         >
@@ -94,7 +94,7 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-col justify-center"
         >

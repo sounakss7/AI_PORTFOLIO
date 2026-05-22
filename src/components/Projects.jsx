@@ -55,7 +55,7 @@ const ProjectCard = ({ project, index }) => {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
       whileHover={{ y: -6 }}
       className={`group relative flex flex-col justify-between p-8 bg-surface border border-border-subtle ${project.accentBorderHover} ${project.accentShadowHover} transition-all duration-300 md:col-span-2`}
