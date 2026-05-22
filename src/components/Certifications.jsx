@@ -9,14 +9,16 @@ const certs = [
     title: "AI Foundations Associate",
     date: "Aug 2024",
     score: "Score: 78%",
-    accent: "accent-cyan"
+    accentText: "text-accent-cyan",
+    accentBorderHover: "group-hover:border-accent-cyan"
   },
   {
     issuer: "Tata / Forage",
     title: "GenAI Powered Data Analytics Job Simulation",
     date: "Aug 2024",
     score: "Completed",
-    accent: "accent-amber"
+    accentText: "text-accent-amber",
+    accentBorderHover: "group-hover:border-accent-amber"
   }
 ];
 
@@ -35,8 +37,8 @@ const Certifications = () => {
             transition={{ duration: 0.6, delay: idx * 0.2 }}
             className="flex items-start gap-6 border-l-2 border-border-subtle pl-6 hover:border-accent-cyan transition-colors group"
           >
-            <div className={`p-4 bg-surface rounded-full border border-border-subtle group-hover:border-${cert.accent} transition-colors`}>
-              <Award className={`w-8 h-8 text-${cert.accent}`} />
+            <div className={`p-4 bg-surface rounded-full border border-border-subtle ${cert.accentBorderHover} transition-colors`}>
+              <Award className={`w-8 h-8 ${cert.accentText}`} />
             </div>
             <div>
               <span className="font-code text-xs text-text-muted mb-2 block">{cert.date}</span>

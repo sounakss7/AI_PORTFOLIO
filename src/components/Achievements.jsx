@@ -10,27 +10,31 @@ const achievements = [
     num: 6,
     suffix: "K",
     label: "out of 55,000+ teams · ET GenAI Hackathon 2026 Phase 2",
-    glow: "accent-cyan"
+    glowBg: "bg-accent-cyan",
+    glowText: "text-accent-cyan"
   },
   {
     icon: "🎯",
     num: 98,
     suffix: "%",
     label: "Model Accuracy · Breast Cancer Detection · XGBoost",
-    glow: "accent-amber"
+    glowBg: "bg-accent-amber",
+    glowText: "text-accent-amber"
   },
   {
     icon: "🥇",
     prefix: "#",
     num: 14,
     label: "CS Mastermind Leaderboard · The Vidyawan",
-    glow: "blue-400"
+    glowBg: "bg-blue-400",
+    glowText: "text-blue-400"
   },
   {
     icon: "🌐",
     num: 64,
     label: "GitHub Clones · Cancer Detection Open-Source Repo",
-    glow: "accent-red"
+    glowBg: "bg-accent-red",
+    glowText: "text-accent-red"
   }
 ];
 
@@ -50,11 +54,11 @@ const StatCard = ({ achievement, index }) => {
       className={`relative p-6 bg-surface border border-border-subtle overflow-hidden flex flex-col justify-between group`}
     >
       {/* Ambient Glow */}
-      <div className={`absolute -inset-4 opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500 bg-${achievement.glow}`} />
+      <div className={`absolute -inset-4 opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500 ${achievement.glowBg}`} />
       
       <div className="relative z-10">
         <span className="text-3xl mb-4 block">{achievement.icon}</span>
-        <div className={`font-display text-5xl md:text-6xl mb-4 text-${achievement.glow}`}>
+        <div className={`font-display text-5xl md:text-6xl mb-4 ${achievement.glowText}`}>
           {achievement.prefix}
           {inView ? (
             <CountUp 

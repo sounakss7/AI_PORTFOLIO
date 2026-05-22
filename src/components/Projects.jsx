@@ -14,7 +14,10 @@ const projects = [
   {
     title: "Agent Mind",
     tags: "Agentic AI · LangGraph · Multi-Model",
-    accent: "accent-cyan",
+    accentText: "text-accent-cyan",
+    accentBg: "bg-accent-cyan",
+    accentBorderHover: "hover:border-accent-cyan",
+    accentShadowHover: "hover:shadow-[0_0_30px_-5px_var(--color-accent-cyan)]",
     content: [
       "Production-grade multi-tool AI agent using LangGraph StateGraph",
       "Dual-model comparison: Gemini vs Groq (Llama 3.1), judged by Mistral AI",
@@ -30,7 +33,10 @@ const projects = [
   {
     title: "Breast Cancer Detection",
     tags: "Clinical ML · XGBoost · Explainable AI",
-    accent: "accent-amber",
+    accentText: "text-accent-amber",
+    accentBg: "bg-accent-amber",
+    accentBorderHover: "hover:border-accent-amber",
+    accentShadowHover: "hover:shadow-[0_0_30px_-5px_var(--color-accent-amber)]",
     content: [
       "XGBoost on Wisconsin dataset — 98% accuracy",
       "Full preprocessing pipeline: feature scaling, normalization, EDA",
@@ -52,12 +58,12 @@ const ProjectCard = ({ project, index }) => {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
       whileHover={{ y: -6 }}
-      className={`group relative flex flex-col justify-between p-8 bg-surface border border-border-subtle hover:border-${project.accent} hover:shadow-[0_0_30px_-5px_var(--color-${project.accent})] transition-all duration-300 md:col-span-2`}
+      className={`group relative flex flex-col justify-between p-8 bg-surface border border-border-subtle ${project.accentBorderHover} ${project.accentShadowHover} transition-all duration-300 md:col-span-2`}
     >
       <div>
         <div className="flex justify-between items-start mb-6">
           <div>
-            <span className={`font-code text-xs font-semibold tracking-wider text-${project.accent} uppercase mb-2 block`}>
+            <span className={`font-code text-xs font-semibold tracking-wider ${project.accentText} uppercase mb-2 block`}>
               {project.tags}
             </span>
             <h3 className="font-display text-3xl text-text-primary group-hover:text-white transition-colors">
@@ -72,7 +78,7 @@ const ProjectCard = ({ project, index }) => {
         <ul className="space-y-3 mb-8">
           {project.content.map((item, i) => (
             <li key={i} className="flex items-start gap-3 text-sm text-text-muted font-sans">
-              <span className={`mt-1.5 w-1.5 h-1.5 rounded-full bg-${project.accent} shrink-0`} />
+              <span className={`mt-1.5 w-1.5 h-1.5 rounded-full ${project.accentBg} shrink-0`} />
               <span>{item}</span>
             </li>
           ))}
