@@ -1,7 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+
+const CountUp = ({ end, duration = 2.5 }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTimestamp = null;
+    let animationFrameId;
+
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
+      const easeOutQuad = progress * (2 - progress);
+      setCount(Math.floor(easeOutQuad * end));
+      
+      if (progress < 1) {
+        animationFrameId = window.requestAnimationFrame(step);
+      }
+    };
+
+    animationFrameId = window.requestAnimationFrame(step);
+    
+    return () => {
+      if (animationFrameId) {
+        window.cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, [end, duration]);
+
+  return <>{count}</>;
+};
 
 const achievements = [
   {
@@ -64,7 +93,6 @@ const StatCard = ({ achievement, index }) => {
             <CountUp 
               end={achievement.num} 
               duration={2.5} 
-              useEasing={true}
             />
           ) : "0"}
           {achievement.suffix}

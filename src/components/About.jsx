@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const SectionHeader = ({ title }) => (
   <motion.h2
-    initial={{ clipPath: 'inset(0 100% 0 0)' }}
-    whileInView={{ clipPath: 'inset(0 0% 0 0)' }}
+    initial={{ opacity: 0, x: -20 }}
+    whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true, amount: 0.1 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
     className="font-heading text-4xl md:text-5xl text-text-primary mb-16 pb-4 border-b border-border-subtle inline-block pr-12"
