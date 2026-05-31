@@ -47,6 +47,24 @@ const projects = [
     ],
     badges: ["98% Accuracy", "64 GitHub Clones", "41 Unique Users"],
     link: "#"
+  },
+  {
+    title: "SCM Agentic Workflow",
+    tags: "Agentic AI · LangGraph · Multi-Agent SCM",
+    accentText: "text-accent-red",
+    accentBg: "bg-accent-red",
+    accentBorderHover: "hover:border-accent-red",
+    accentShadowHover: "hover:shadow-[0_0_30px_-5px_var(--color-accent-red)]",
+    content: [
+      "Stateful multi-agent SCM (Supply Chain Management) workflow utilizing LangGraph for cyclic execution",
+      "Intelligent query routing and decision-making driven by Gemini 2.5 Flash as the core reasoning engine",
+      "Specialized autonomous sub-agents collaborating on Demand Forecasting, Inventory Checks, and Purchase Orders",
+      "Qdrant Vector DB integration for RAG-based semantic search over contracts and supplier documents",
+      "ReAct agent design pattern allowing sub-agents to dynamically invoke database APIs and search tools",
+      "Qualified for Phase 2 of the ET GenAI Hackathon 2026 (Ranked in the top 6,000 teams nationwide)"
+    ],
+    badges: ["ET GenAI Hackathon 2026", "Multi-Agent System", "Cyclic Workflows"],
+    link: "https://github.com/sounakss7/SCM_AGENTIC_WORKFLOW"
   }
 ];
 
