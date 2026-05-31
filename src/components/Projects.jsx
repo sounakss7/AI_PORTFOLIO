@@ -13,22 +13,22 @@ const GithubIcon = () => (
 const projects = [
   {
     title: "Agent Mind",
-    tags: "Agentic AI · LangGraph · Multi-Model",
+    tags: "Agentic AI · LangGraph · Patent-Filed",
     accentText: "text-accent-cyan",
     accentBg: "bg-accent-cyan",
     accentBorderHover: "hover:border-accent-cyan",
     accentShadowHover: "hover:shadow-[0_0_30px_-5px_var(--color-accent-cyan)]",
     content: [
-      "Production-grade multi-tool AI agent using LangGraph StateGraph",
-      "Dual-model comparison: Gemini vs Groq (Llama 3.1), judged by Mistral AI",
-      "RAG with Qdrant + HuggingFace MiniLM-L6-v2 for persistent memory",
-      "Tesseract OCR fallback for multi-format document analysis",
-      "LangSmith tracing + gTTS multimodal experience",
-      "Deployed on Streamlit with multi-session support + real-time agent reasoning visibility"
+      "Architected a production-grade multi-tool AI agent (LangGraph StateGraph) routing queries across 4 specialized nodes: Tavily web search, Pollinations AI image generation, dual-model comparison, and OCR document analysis with Tesseract fallback",
+      "Built a dual-model comparison framework (Gemini 2.5 Flash vs. Groq/Llama 3.1) with Mistral Small as an autonomous LLM-judge evaluating response quality across a 100-query evaluation set",
+      "Implemented a 4-layer production security pipeline (InputGuard -> OutputGuard -> MemoryGuard -> AuditLogger) blocking prompt injection, PII leakage, and adversarial inputs validated against 20+ injection vectors",
+      "Integrated Qdrant Cloud with HuggingFace MiniLM-L6-v2 embeddings for persistent RAG cross-session memory, instrumented via LangSmith for token-level distributed tracing",
+      "Filed an institutional patent application under the Neuroplexa AI brand through Dr. Sudhir Chandra Sur Institute of Technology, mentored by Prof. Dr. Sanjoy Bhattacharjee",
+      "Deployed live at multimodel.streamlit.app"
     ],
-    badges: ["Multi-Session", "Production-Ready", "4-Layer Security"],
-    brandNote: "Neuroplexa AI — led under Prof. Sanjoy Bhattacharya",
-    link: "#"
+    badges: ["Patent-Filed", "4-Layer Security", "LangSmith Traced"],
+    brandNote: "Neuroplexa AI — mentored by Prof. Dr. Sanjoy Bhattacharjee",
+    link: "https://github.com/sounakss7"
   },
   {
     title: "Breast Cancer Detection",
@@ -38,15 +38,14 @@ const projects = [
     accentBorderHover: "hover:border-accent-amber",
     accentShadowHover: "hover:shadow-[0_0_30px_-5px_var(--color-accent-amber)]",
     content: [
-      "XGBoost on Wisconsin dataset — 98% accuracy",
-      "Full preprocessing pipeline: feature scaling, normalization, EDA",
-      "SHAP waterfall charts for feature-level clinical explainability",
-      "3D Plotly scatter plots across 30 high-dimensional features",
-      "ROC-AUC + Confusion Matrix live evaluation dashboard",
-      '"Load Random Patient" feature for instant real-world testing'
+      "Engineered a clinical ML diagnostic pipeline (XGBoost) achieving 98% accuracy on the Wisconsin Breast Cancer dataset (569 samples, 30 features)",
+      "Implemented full preprocessing pipeline including feature scaling, normalization, and exploratory data analysis (EDA) with SHAP-driven feature importance ranking",
+      "Integrated SHAP Explainable AI with waterfall charts for per-prediction feature-level decision breakdowns, eliminating the black-box problem for medical stakeholders",
+      "Built interactive 3D Plotly scatter plots visualizing benign vs. malignant clustering across 30 high-dimensional features, with a live ROC-AUC and Confusion Matrix evaluation dashboard",
+      "Deployed a production-ready Streamlit web app with a 'Load Random Patient' feature for instant real-world testing"
     ],
-    badges: ["98% Accuracy", "64 GitHub Clones", "41 Unique Users"],
-    link: "#"
+    badges: ["98% Accuracy", "SHAP Explainability", "3D Plotly Visuals"],
+    link: "https://github.com/sounakss7/Breast_Cancer_detection-USING-XGBOOST-classifier"
   },
   {
     title: "SCM Agentic Workflow",
@@ -56,14 +55,14 @@ const projects = [
     accentBorderHover: "hover:border-accent-red",
     accentShadowHover: "hover:shadow-[0_0_30px_-5px_var(--color-accent-red)]",
     content: [
-      "Stateful multi-agent SCM (Supply Chain Management) workflow utilizing LangGraph for cyclic execution",
-      "Intelligent query routing and decision-making driven by Gemini 2.5 Flash as the core reasoning engine",
-      "Specialized autonomous sub-agents collaborating on Demand Forecasting, Inventory Checks, and Purchase Orders",
-      "Qdrant Vector DB integration for RAG-based semantic search over contracts and supplier documents",
-      "Dynamic state updates enabling sub-agents to invoke external tools, database APIs, and web search",
-      "Qualified for Phase 2 of the ET GenAI Hackathon 2026 (Ranked in the top 6,000 teams nationwide)"
+      "Built a 5-agent autonomous SCM system (LangGraph cyclic StateGraph) with Intake, SCM Intelligence, Compliance & Tariff Classifier, Process Orchestration, and External Carrier nodes",
+      "Implemented self-correcting cyclic error-handling: autonomously reroutes logistics (e.g. LA -> Seattle) during carrier booking failures under simulated port congestion, cutting simulated SLA breaches from 2% to <0.1%",
+      "Modelled projected enterprise savings of $310K/month ($215K from automating manual processing, $95K from autonomous SLA-breach prevention via reroute loops)",
+      "Designed hybrid multi-LLM orchestration across Gemini 2.5 Flash (complex reasoning & analytics) and Groq Mistral (fast routing), secured by InputGuard/OutputGuard prompt injection intercepts",
+      "Persisted agent decisions and carrier coordinates into a MySQL/SQLite audit ledger with a 3-tab Streamlit dashboard: SCM Control Center, Audit Trail, and Executive AI Analytics Report",
+      "Deployed live at scmworkflow.streamlit.app"
     ],
-    badges: ["ET GenAI Hackathon 2026", "Multi-Agent System", "Cyclic Workflows"],
+    badges: ["ET GenAI Hackathon 2026", "LangGraph Cyclic StateGraph", "Savings: $310K/mo"],
     link: "https://github.com/sounakss7/SCM_AGENTIC_WORKFLOW"
   }
 ];
