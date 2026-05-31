@@ -60,7 +60,7 @@ const projects = [
       "Intelligent query routing and decision-making driven by Gemini 2.5 Flash as the core reasoning engine",
       "Specialized autonomous sub-agents collaborating on Demand Forecasting, Inventory Checks, and Purchase Orders",
       "Qdrant Vector DB integration for RAG-based semantic search over contracts and supplier documents",
-      "ReAct agent design pattern allowing sub-agents to dynamically invoke database APIs and search tools",
+      "Dynamic state updates enabling sub-agents to invoke external tools, database APIs, and web search",
       "Qualified for Phase 2 of the ET GenAI Hackathon 2026 (Ranked in the top 6,000 teams nationwide)"
     ],
     badges: ["ET GenAI Hackathon 2026", "Multi-Agent System", "Cyclic Workflows"],
