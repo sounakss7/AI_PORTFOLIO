@@ -64,6 +64,38 @@ const projects = [
     ],
     badges: ["ET GenAI Hackathon 2026", "LangGraph Cyclic StateGraph", "Savings: $310K/mo"],
     link: "https://github.com/sounakss7/SCM_AGENTIC_WORKFLOW"
+  },
+  {
+    title: "HR Analytics Attrition Platform",
+    tags: "People Analytics · PostgreSQL · Power BI · Python ETL",
+    accentText: "text-purple-400",
+    accentBg: "bg-purple-400",
+    accentBorderHover: "hover:border-purple-400",
+    accentShadowHover: "hover:shadow-[0_0_30px_-5px_rgba(192,132,252,0.3)]",
+    content: [
+      "Engineered an enterprise People Analytics platform analyzing 1,233 active employee headcounts and 237 turnover events (16.12% attrition rate)",
+      "Built an automated end-to-end Python ETL pipeline constructing 12 custom analytical features (tenure groups, income bands, overtime flags, distance categories)",
+      "Architected transaction-safe PostgreSQL database layer on Neon Cloud with DDL schemas, B-tree indexes, and 6 optimized analytical views",
+      "Designed an executive Power BI Dashboard connected directly to PostgreSQL database views for real-time turnover driver tracking and strategic HR planning"
+    ],
+    badges: ["PostgreSQL & Neon Cloud", "Power BI Executive Dashboard", "Python ETL Pipeline"],
+    link: "https://github.com/sounakss7/HR-Analytics-Employee-Attrition-Platform"
+  },
+  {
+    title: "NGO Data Analytics Platform",
+    tags: "Data Analytics · SQL & SQLite · Linear Regression · HTML Dashboard",
+    accentText: "text-emerald-400",
+    accentBg: "bg-emerald-400",
+    accentBorderHover: "hover:border-emerald-400",
+    accentShadowHover: "hover:shadow-[0_0_30px_-5px_rgba(52,211,153,0.3)]",
+    content: [
+      "Developed an end-to-end Data Analytics platform for NayePankh Foundation NGO analyzing student enrollment trends and donor channel performance",
+      "Authored analytical SQL query suite leveraging Common Table Expressions (CTEs), aggregate window functions, and program expenditure sharing audits on SQLite database storage",
+      "Implemented linear regression modeling (y = mx + c) in Python to project 2026 student registration growth and capacity requirements",
+      "Exported interactive dark-mode HTML visual dashboard reports and multi-chart Seaborn/Matplotlib visualization suites"
+    ],
+    badges: ["SQL CTEs & SQLite", "Linear Regression 2026 Forecast", "Interactive HTML Dashboard"],
+    link: "https://github.com/sounakss7/Data_Analyst_Project"
   }
 ];
 
