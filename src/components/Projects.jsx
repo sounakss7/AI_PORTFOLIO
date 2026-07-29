@@ -96,6 +96,23 @@ const projects = [
     ],
     badges: ["SQL CTEs & SQLite", "Linear Regression 2026 Forecast", "Interactive HTML Dashboard"],
     link: "https://github.com/sounakss7/Data_Analyst_Project"
+  },
+  {
+    title: "Agentic RAG Engine",
+    tags: "Agentic AI · Corrective RAG · LangGraph · Qdrant",
+    accentText: "text-blue-400",
+    accentBg: "bg-blue-400",
+    accentBorderHover: "hover:border-blue-400",
+    accentShadowHover: "hover:shadow-[0_0_30px_-5px_rgba(96,165,250,0.3)]",
+    content: [
+      "Built an enterprise Corrective RAG (CRAG) system powered by LangGraph, Gemini 2.5 Flash, Qdrant Vector DB, Rank-BM25, and Tavily Fallback Web Search",
+      "Implemented a self-corrective 5-node graph loop: HyDE query generator, Hybrid Search (BM25 + Qdrant text-embedding-004 + RRF Fusion), FlashRank Cross-Encoder reranker, LLM Context Grader, and Fallback Web Search",
+      "Engineered multimodal document ingestion & OCR (pdf2image & PyTesseract) supporting PDF, TXT, MD, and image files with intelligent character chunking",
+      "Integrated an automated benchmark RAGAS Evaluation Dashboard measuring Faithfulness (hallucination audit) and Context Precision (signal-to-noise ratio)",
+      "Deployed live at agentic-rag-engine.streamlit.app with a real-time visual LangGraph execution trace"
+    ],
+    badges: ["Corrective RAG (CRAG)", "Hybrid RRF & FlashRank", "RAGAS Evaluated"],
+    link: "https://github.com/sounakss7/agentic-rag-engine"
   }
 ];
 
