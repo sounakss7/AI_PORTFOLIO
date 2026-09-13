@@ -4,6 +4,8 @@ import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Experience from './components/Experience';
+import AgentSimulator from './components/AgentSimulator';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Achievements from './components/Achievements';
@@ -59,6 +61,10 @@ function App() {
       <main>
         <Hero onOpenAgent={() => setIsAgentOpen(true)} />
         <About />
+        <Experience />
+        <div className="max-w-7xl mx-auto px-6">
+          <AgentSimulator />
+        </div>
         <Skills />
         <Projects onSelectProject={(project) => setSelectedProject(project)} />
         <Achievements />

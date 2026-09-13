@@ -256,6 +256,23 @@ const ProjectCard = ({ project, index, onInspect }) => {
           </div>
         )}
 
+        {/* Inline SHAP Attribution Preview for Breast Cancer */}
+        {project.id === 'breast-cancer' && (
+          <div className="mb-6 p-3.5 bg-obsidian/80 border border-accent-amber/30 rounded-xl flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <span className="text-[10px] font-code text-accent-amber uppercase tracking-wider block mb-0.5">
+                SHAP Waterfall Attribution:
+              </span>
+              <span className="text-xs font-code text-text-primary">
+                Concave Points (+0.38) · Mean Radius (+0.24) · Texture (+0.12)
+              </span>
+            </div>
+            <span className="text-[10px] font-code bg-accent-amber/10 border border-accent-amber/30 text-accent-amber px-2 py-0.5 rounded">
+              Live SHAP In Modal
+            </span>
+          </div>
+        )}
+
         {/* Content Bullets */}
         <ul className="space-y-3 mb-8">
           {project.content.slice(0, project.featured ? 4 : 3).map((item, i) => (

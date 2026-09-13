@@ -71,19 +71,27 @@ const Contact = () => {
       case 'help':
         newHistory.push({
           type: 'output',
-          text: `Available commands:\n  • about     - Who is Sounak?\n  • skills    - List top technologies\n  • projects  - Key project highlights\n  • patent    - Neuroplexa AI patent details\n  • contact   - Email & social links\n  • resume    - Open curriculum vitae\n  • clear     - Clear terminal buffer`
+          text: `Available commands:\n  • about       - Who is Sounak?\n  • experience  - SDE Internship at Trafasa\n  • skills      - List top technologies\n  • projects    - Key project highlights\n  • patent      - Neuroplexa AI patent details\n  • contact     - Email & social links\n  • resume      - Open curriculum vitae\n  • clear       - Clear terminal buffer`
         });
         break;
       case 'about':
         newHistory.push({
           type: 'output',
-          text: 'Sounak Sarkar: Final-year CSE (AI & ML) student, LangGraph StateGraph builder, XGBoost 98% accuracy engineer, and ET GenAI Hackathon Phase 2 qualifier.'
+          text: 'Sounak Sarkar: Software Engineer Intern @ Trafasa, B.Tech CSE (AI & ML) final-year student, LangGraph StateGraph builder, and XGBoost 98% clinical accuracy engineer.'
+        });
+        break;
+      case 'experience':
+      case 'trafasa':
+      case 'work':
+        newHistory.push({
+          type: 'output',
+          text: 'Role: Software Engineer Intern @ Trafasa (Aug 2026 - Present · Kolkata, India · On-site)\nDomain: B2B Marketplace & Procurement Platform\nCore Stack: Frappe Framework, DocTypes, Python Backend, REST APIs, Workflow Automation.'
         });
         break;
       case 'skills':
         newHistory.push({
           type: 'output',
-          text: 'Core Stack: LangGraph, LangChain, XGBoost, Scikit-Learn, Python, SQL, Qdrant Vector DB, Neon Cloud PostgreSQL, Streamlit, Docker.'
+          text: 'Core Stack: LangGraph, LangChain, Frappe Framework, XGBoost, Scikit-Learn, Python, SQL, Qdrant Vector DB, Neon Cloud PostgreSQL, Streamlit, Docker.'
         });
         break;
       case 'projects':
@@ -125,7 +133,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 px-6 max-w-7xl mx-auto">
-      <SectionHeader title="07. Initialize Connection" />
+      <SectionHeader title="06. Initialize Connection" />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Left Column: Interactive Terminal Box */}

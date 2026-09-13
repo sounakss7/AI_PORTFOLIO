@@ -45,6 +45,14 @@ const knowledgeBase = [
     latency: '16ms'
   },
   {
+    keywords: ['trafasa', 'intern', 'experience', 'work', 'job', 'sde', 'frappe', 'doctype', 'procurement'],
+    title: 'Software Engineer Intern @ Trafasa',
+    answer: `Sounak is currently working as a Software Engineer Intern at Trafasa (Aug 2026 - Present · Kolkata, India · On-site):\n\nKey Responsibilities & Impact:\n• Enterprise B2B Marketplace: Contributing to the development and enhancement of a B2B procurement platform, spanning application modules, backend functionality, and data flows.\n• Frappe Framework & DocTypes: Developing and maintaining backend logic, custom DocTypes, server-side controller hooks, configurations, API integrations, and document approval workflows.\n• Python Backend Processing: Implementing core business logic, validations, automated document state transitions, and asynchronous operations.\n• Production Delivery: Collaborating with technical teams on requirements, troubleshooting, Git-based workflows, and production deliverables.`,
+    sectionTarget: 'experience',
+    confidence: '99.9%',
+    latency: '11ms'
+  },
+  {
     keywords: ['contact', 'hire', 'email', 'roles', 'open', 'internship'],
     title: 'Availability & Contact Info',
     answer: `Sounak is actively open to Full-Time Roles, AI Research Internships, Agentic AI Consulting, and High-Impact Collaborative Projects.\n\n• Direct Email: hrick3130@gmail.com\n• Location: Kolkata, India (Open to remote & relocation)\n• LinkedIn: linkedin.com/in/sounak-sarkar-aa230a248\n• GitHub: github.com/sounakss7`,
@@ -55,11 +63,11 @@ const knowledgeBase = [
 ];
 
 const presetQuestions = [
+  "What does Sounak do at Trafasa?",
   "Explain the Patent on Agent Mind",
   "How does the SCM 5-agent system save $310K?",
   "Show Breast Cancer Detection metrics",
-  "What is Sounak's core tech stack?",
-  "What did he achieve at ET GenAI Hackathon?"
+  "What is Sounak's core tech stack?"
 ];
 
 const AgentDrawer = ({ isOpen, onClose }) => {

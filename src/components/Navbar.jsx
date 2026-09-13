@@ -5,10 +5,11 @@ import { sounds } from '../utils/soundEffects';
 
 const navItems = [
   { id: 'about', label: '01. Identity' },
-  { id: 'skills', label: '02. Matrix' },
-  { id: 'projects', label: '03. Works' },
-  { id: 'achievements', label: '04. Telemetry' },
-  { id: 'contact', label: '05. Terminal' },
+  { id: 'experience', label: '02. Experience' },
+  { id: 'skills', label: '03. Matrix' },
+  { id: 'projects', label: '04. Works' },
+  { id: 'achievements', label: '05. Telemetry' },
+  { id: 'contact', label: '06. Terminal' },
 ];
 
 const Navbar = ({ onOpenAgent }) => {

@@ -29,6 +29,7 @@ const Hero = ({ onOpenAgent }) => {
           {/* Floating Metric Badges */}
           <div className="flex flex-wrap gap-2.5 mb-8">
             {[
+              { text: 'SDE Intern @ Trafasa', color: 'text-emerald-400', border: 'border-emerald-400/30', dot: 'bg-emerald-400' },
               { text: '98% Model Accuracy', color: 'text-accent-cyan', border: 'border-accent-cyan/30', dot: 'bg-accent-cyan' },
               { text: 'Top 6K / 55K+ Hackathon', color: 'text-accent-amber', border: 'border-accent-amber/30', dot: 'bg-accent-amber' },
               { text: 'Patent-Filed Neuroplexa AI', color: 'text-purple-400', border: 'border-purple-400/30', dot: 'bg-purple-400' },
@@ -70,10 +71,11 @@ const Hero = ({ onOpenAgent }) => {
             <span className="text-accent-cyan font-code text-lg sm:text-xl font-normal">&gt;</span>
             <Typewriter
               words={[
+                'SDE Intern @ Trafasa',
                 'Agentic AI Developer',
                 'LangGraph Systems Architect',
                 'Machine Learning Engineer',
-                'Explainable AI Practitioner'
+                'Backend & Python Engineer'
               ]}
               loop={0}
               cursor
@@ -166,9 +168,16 @@ const Hero = ({ onOpenAgent }) => {
             <div className="space-y-4 font-code text-xs">
               <div className="p-3 bg-obsidian/70 rounded-lg border border-border-subtle/60 flex items-center justify-between">
                 <span className="text-text-muted flex items-center gap-2">
+                  <Activity className="w-3.5 h-3.5 text-emerald-400" /> Active Industry Role:
+                </span>
+                <span className="text-emerald-400 font-medium">SDE Intern @ Trafasa</span>
+              </div>
+
+              <div className="p-3 bg-obsidian/70 rounded-lg border border-border-subtle/60 flex items-center justify-between">
+                <span className="text-text-muted flex items-center gap-2">
                   <Cpu className="w-3.5 h-3.5 text-accent-cyan" /> Core Architecture:
                 </span>
-                <span className="text-text-primary font-medium">LangGraph Cyclic Graph</span>
+                <span className="text-text-primary font-medium">LangGraph & Frappe Backend</span>
               </div>
 
               <div className="p-3 bg-obsidian/70 rounded-lg border border-border-subtle/60 flex items-center justify-between">

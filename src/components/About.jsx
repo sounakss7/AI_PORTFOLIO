@@ -74,10 +74,10 @@ const About = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <p>
-            I am a Machine Learning Engineer and Agentic AI Developer with an obsession for systems that can reason, reflect, and correct their own errors. My focus is on eliminating brittle prompts and black-box algorithms in favor of cyclic agent graphs and mathematically transparent models.
+            I am a Software Engineer Intern at Trafasa and an Agentic AI Developer with an obsession for systems that can reason, reflect, and scale deterministically. In industry, I build scalable B2B marketplace backends using the Frappe Framework and Python; in research, I architect multi-agent cyclic state graphs and clinically explainable ML models.
           </p>
           <p>
-            From filing an institutional patent application under the Neuroplexa AI brand to ranking in the Top 6,000 out of 55,000+ teams at the national ET GenAI Hackathon 2026, my work continuously bridges the divide between cutting-edge AI research and measurable enterprise value.
+            From filing an institutional patent application under the Neuroplexa AI brand to ranking in the Top 6,000 out of 55,000+ teams at the national ET GenAI Hackathon 2026, my work continuously bridges the divide between cutting-edge AI research and production-grade enterprise software.
           </p>
         </motion.div>
       </div>
