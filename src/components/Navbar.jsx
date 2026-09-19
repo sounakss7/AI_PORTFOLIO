@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bot, Volume2, VolumeX, Menu, X } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
+import { LiveViewPill } from './LiveViewCounter';
 
 const navItems = [
   { id: 'about', label: '01. Identity' },
@@ -108,6 +109,11 @@ const Navbar = ({ onOpenAgent }) => {
 
         {/* Right Controls */}
         <div className="flex items-center gap-2 sm:gap-3">
+          {/* Live View Tracker Pill */}
+          <div className="hidden sm:block">
+            <LiveViewPill />
+          </div>
+
           {/* Sound FX Switch */}
           <button
             onClick={toggleAudio}

@@ -16,6 +16,7 @@ import AgentDrawer from './components/AgentDrawer';
 import ProjectModal from './components/ProjectModal';
 import { Bot, ArrowUp } from 'lucide-react';
 import { sounds } from './utils/soundEffects';
+import { LiveViewPill } from './components/LiveViewCounter';
 
 function App() {
   const [isAgentOpen, setIsAgentOpen] = useState(false);
@@ -132,8 +133,9 @@ function App() {
             Engineered with React 19, Framer Motion, Tailwind CSS, and LangGraph Architecture.
           </div>
 
-          <div className="flex items-center gap-4 text-[11px]">
-            <span className="text-accent-cyan">SYSTEM STATUS: 100% OPERATIONAL</span>
+          <div className="flex flex-wrap items-center gap-4 text-[11px]">
+            <LiveViewPill />
+            <span className="text-accent-cyan hidden sm:inline">SYSTEM STATUS: 100% OPERATIONAL</span>
             <span>© {new Date().getFullYear()}</span>
           </div>
         </div>

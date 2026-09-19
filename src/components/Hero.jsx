@@ -3,6 +3,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import { ChevronDown, ArrowRight, Download, Bot, Terminal, Activity, ShieldCheck, Zap, Cpu } from 'lucide-react';
 import NeuralCanvas from './NeuralCanvas';
 import { sounds } from '../utils/soundEffects';
+import { LiveViewTelemetryCard } from './LiveViewCounter';
 
 const Hero = ({ onOpenAgent }) => {
   return (
@@ -200,6 +201,11 @@ const Hero = ({ onOpenAgent }) => {
                 </span>
                 <span className="text-blue-400 font-medium">98.0% (XGBoost Clinical)</span>
               </div>
+            </div>
+
+            {/* Live Profile View Tracker */}
+            <div className="mt-4">
+              <LiveViewTelemetryCard />
             </div>
 
             {/* Simulated Dynamic Node Status Stream */}
