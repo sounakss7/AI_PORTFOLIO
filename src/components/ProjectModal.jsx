@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, GitBranch, Layers, Sliders, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { X, ExternalLink, GitBranch, Layers, Sliders, CheckCircle2, AlertTriangle, ShieldCheck, Cpu, Database, Network, Code } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
 
 const GithubIcon = () => (
@@ -207,6 +207,136 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 </div>
               </div>
             )}
+
+            {/* Interactive Patent & Zero-Trust Defense Showcase (AGENT_MIND) */}
+            {project.id === 'agent-mind' && (
+              <div className="my-6 p-6 bg-obsidian/90 border border-accent-cyan/40 rounded-2xl shadow-xl font-code text-xs">
+                <div className="flex items-center justify-between pb-4 border-b border-border-subtle mb-5">
+                  <span className="text-accent-cyan uppercase tracking-wider flex items-center gap-2 font-semibold">
+                    <ShieldCheck className="w-4 h-4 text-accent-cyan" /> Indian Patent Application #202631059925 Architecture
+                  </span>
+                  <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/30 font-bold">
+                    101/101 TESTS PASSING
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div className="p-4 bg-surface rounded-xl border border-border-subtle">
+                    <div className="text-accent-cyan font-bold mb-1 flex items-center gap-2">
+                      <Cpu className="w-3.5 h-3.5" /> Deterministic SelfRouter Automata
+                    </div>
+                    <div className="text-[11px] text-text-muted leading-relaxed">
+                      Sub-millisecond (&lt;0.1ms) regex & negative boundary classification routing across multi-modal tools without external LLM inference, preventing token exhaustion and 429 quota spikes.
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-surface rounded-xl border border-border-subtle">
+                    <div className="text-purple-400 font-bold mb-1 flex items-center gap-2">
+                      <ShieldCheck className="w-3.5 h-3.5" /> 4-Layer Zero-Trust Vector Pipeline
+                    </div>
+                    <div className="text-[11px] text-text-muted leading-relaxed">
+                      InputGuard (20+ injections blocked) → OutputGuard (Luhn credit card & PII redaction) → MemoryGuard → Immutable Qdrant Cloud security audit logging.
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-surface rounded-xl border border-border-subtle">
+                    <div className="text-accent-amber font-bold mb-1 flex items-center gap-2">
+                      <Layers className="w-3.5 h-3.5" /> Mixture of Agents (MoA) + HITL
+                    </div>
+                    <div className="text-[11px] text-text-muted leading-relaxed">
+                      Parallel contenders (Groq gpt-oss-120b, DeepSeek-V3, Moonshot Kimi, Gemini) evaluated blind by Mistral Small judge with dynamic Human-in-the-Loop preference overrides.
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-surface rounded-xl border border-border-subtle">
+                    <div className="text-blue-400 font-bold mb-1 flex items-center gap-2">
+                      <Database className="w-3.5 h-3.5" /> Cryptographic Identity Scoping
+                    </div>
+                    <div className="text-[11px] text-text-muted leading-relaxed">
+                      Strict cross-tenant memory isolation using HMAC-SHA256(Name || PIN, Pepper) partition filtering across shared cloud vector clusters.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-3 bg-accent-cyan/10 border border-accent-cyan/20 rounded-xl text-[11px] text-text-muted flex items-center justify-between">
+                  <span>IPO Kolkata Branch • Controller General of Patents, Designs & Trade Marks (CGPDTM)</span>
+                  <a
+                    href="https://github.com/sounakss7/AGENT_MIND"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent-cyan hover:underline font-bold flex items-center gap-1"
+                  >
+                    View InPASS Spec & Repo <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            )}
+
+            {/* Interactive NexusRAG 3-Way Hybrid & GraphRAG Inspector */}
+            {project.id === 'agentic-rag' && (
+              <div className="my-6 p-6 bg-obsidian/90 border border-blue-400/40 rounded-2xl shadow-xl font-code text-xs">
+                <div className="flex items-center justify-between pb-4 border-b border-border-subtle mb-5">
+                  <span className="text-blue-400 uppercase tracking-wider flex items-center gap-2 font-semibold">
+                    <Network className="w-4 h-4 text-blue-400" /> NexusRAG: 3-Way Hybrid Retrieval & GraphRAG Blueprint
+                  </span>
+                  <span className="text-[10px] text-accent-cyan bg-accent-cyan/10 px-2.5 py-1 rounded-md border border-accent-cyan/30 font-bold">
+                    FASTAPI + SSE STREAMING
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                  <div className="p-3.5 bg-surface rounded-xl border border-border-subtle">
+                    <div className="text-accent-cyan font-bold mb-1 flex items-center gap-2">
+                      <Database className="w-3.5 h-3.5" /> 1. Qdrant Dense
+                    </div>
+                    <div className="text-[11px] text-text-muted leading-relaxed">
+                      768-dimensional gemini-embedding-001 vectors capturing semantic meaning across high-dimensional latent space.
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 bg-surface rounded-xl border border-border-subtle">
+                    <div className="text-accent-amber font-bold mb-1 flex items-center gap-2">
+                      <Layers className="w-3.5 h-3.5" /> 2. Sparse Lucene BM25
+                    </div>
+                    <div className="text-[11px] text-text-muted leading-relaxed">
+                      Non-negative smoothed BM25 IDF ensuring rare keyword tokens and entity names are never zeroed out.
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 bg-surface rounded-xl border border-border-subtle">
+                    <div className="text-purple-400 font-bold mb-1 flex items-center gap-2">
+                      <Network className="w-3.5 h-3.5" /> 3. NetworkX GraphRAG
+                    </div>
+                    <div className="text-[11px] text-text-muted leading-relaxed">
+                      1-hop & 2-hop entity-relation-entity triple store resolving multi-hop cross-document relationships.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-surface rounded-xl border border-border-subtle mb-4 space-y-2">
+                  <div className="flex justify-between items-center text-text-primary font-bold">
+                    <span className="flex items-center gap-2"><Code className="w-3.5 h-3.5 text-accent-cyan" /> Deterministic Python Code Sandbox</span>
+                    <span className="text-emerald-400 text-[10px] bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">0% MATH HALLUCINATION</span>
+                  </div>
+                  <div className="text-[11px] text-text-muted leading-relaxed">
+                    Executes dynamic Pandas & NumPy scripts inside an isolated runtime to compute growth rates and financial matrices, entirely eliminating LLM arithmetic errors.
+                  </div>
+                </div>
+
+                <div className="p-3 bg-blue-500/10 border border-blue-500/30 rounded-xl text-[11px] text-text-muted flex items-center justify-between">
+                  <span>FastAPI Async Gateway • Real-Time SSE (/api/v1/chat/stream) • Docker Ready</span>
+                  <a
+                    href="https://github.com/sounakss7/agentic-rag-engine"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:underline font-bold flex items-center gap-1"
+                  >
+                    View FastAPI Engine Repo <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            )}
+
 
             {/* Architecture Node Diagram Visualizer */}
             {project.flowNodes && (

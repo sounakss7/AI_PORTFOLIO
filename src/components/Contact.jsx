@@ -71,13 +71,13 @@ const Contact = () => {
       case 'help':
         newHistory.push({
           type: 'output',
-          text: `Available commands:\n  • about       - Who is Sounak?\n  • experience  - SDE Internship at Trafasa\n  • skills      - List top technologies\n  • projects    - Key project highlights\n  • patent      - Neuroplexa AI patent details\n  • contact     - Email & social links\n  • resume      - Open curriculum vitae\n  • clear       - Clear terminal buffer`
+          text: `Available portfolio commands:\n  • about       - Who is Sounak?\n  • experience  - SDE Internship at Trafasa\n  • patent      - Patent #202631059925 (AGENT_MIND)\n  • nexus       - NexusRAG GraphRAG & FastAPI engine\n  • skills      - Technical matrix & core stack\n  • projects    - Key project highlights\n  • contact     - Email & social links\n  • resume      - Open curriculum vitae\n  • clear       - Clear terminal buffer`
         });
         break;
       case 'about':
         newHistory.push({
           type: 'output',
-          text: 'Sounak Sarkar: Software Engineer Intern @ Trafasa, B.Tech CSE (AI & ML) final-year student, LangGraph StateGraph builder, and XGBoost 98% clinical accuracy engineer.'
+          text: 'Sounak Sarkar: Software Engineer Intern @ Trafasa, B.Tech CSE (AI & ML) final-year student, LangGraph StateGraph builder, Indian Patent #202631059925 inventor, and XGBoost 98% clinical accuracy engineer.'
         });
         break;
       case 'experience':
@@ -91,19 +91,29 @@ const Contact = () => {
       case 'skills':
         newHistory.push({
           type: 'output',
-          text: 'Core Stack: LangGraph, LangChain, Frappe Framework, XGBoost, Scikit-Learn, Python, SQL, Qdrant Vector DB, Neon Cloud PostgreSQL, Streamlit, Docker.'
+          text: 'Core Stack: LangGraph, LangChain, GraphRAG, NetworkX, FastAPI, Frappe Framework, XGBoost, Qdrant Vector DB, Neon Cloud PostgreSQL, Streamlit, Docker.'
         });
         break;
       case 'projects':
         newHistory.push({
           type: 'output',
-          text: 'Key Works: 1) Agent Mind (Patent-Filed), 2) SCM Workflow ($310K/mo savings), 3) Breast Cancer Detection (98% Accuracy), 4) Agentic RAG Engine.'
+          text: 'Key Works: 1) Agent Mind (Patent #202631059925), 2) NexusRAG (GraphRAG + FastAPI), 3) SCM Workflow ($310K/mo savings), 4) Breast Cancer Detection (98% Accuracy).'
         });
         break;
       case 'patent':
+      case 'agent_mind':
+      case 'mind':
         newHistory.push({
           type: 'output',
-          text: 'Institutional Patent Application filed under Neuroplexa AI brand through Dr. Sudhir Chandra Sur Institute of Technology (Mentored by Prof. Dr. Sanjoy Bhattacharjee).'
+          text: 'Indian Patent Application #202631059925 (IPO Kolkata Branch, CGPDTM): "Multi-Model Agentic AI System with Mixture of Agents & Vector Security Pipeline (AGENT_MIND)". Mentored by Prof. Dr. Sanjoy Bhattacharjee (SurTech).'
+        });
+        break;
+      case 'nexus':
+      case 'rag':
+      case 'nexusrag':
+        newHistory.push({
+          type: 'output',
+          text: 'NexusRAG (github.com/sounakss7/agentic-rag-engine): Enterprise autonomous deep-research engine combining 3-Way Reciprocal Rank Fusion (Qdrant + BM25 + NetworkX GraphRAG), Parent-Child hierarchical chunking, deterministic Python code sandbox, and real-time FastAPI SSE streaming.'
         });
         break;
       case 'contact':
@@ -123,7 +133,7 @@ const Contact = () => {
       default:
         newHistory.push({
           type: 'output',
-          text: `Command not found: "${cmd}". Type "help" for valid commands.`
+          text: `Command "${cmd}" is not recognized or linked to Sounak Sarkar's portfolio.\nType "help" for portfolio commands, or open Agent Mind to ask questions about his work!`
         });
     }
 

@@ -24,13 +24,13 @@ const skillsData = [
     glowBorder: "hover:border-accent-cyan",
     tools: [
       { name: "LangGraph", desc: "Cyclic StateGraphs, routing, node checkpointing" },
-      { name: "LangChain", desc: "Chains, retrieval, parser agents" },
-      { name: "LangSmith", desc: "Distributed tracing & evaluation" },
+      { name: "GraphRAG & NetworkX", desc: "MultiDiGraph entity-relation triple store & 2-hop traversals" },
+      { name: "3-Way RRF & FlashRank", desc: "Reciprocal Rank Fusion (k=60) & TinyBERT cross-encoders" },
+      { name: "LangChain & LangSmith", desc: "Chains, parsers, and token-level distributed tracing" },
       { name: "Gemini 2.5 Flash", desc: "Multimodal reasoning & function calling" },
       { name: "Groq / Mistral", desc: "Ultra-low latency inference & LLM-as-a-judge" },
-      { name: "Corrective RAG (CRAG)", desc: "HyDE, BM25, RRF fusion & FlashRank" },
-      { name: "HuggingFace", desc: "Transformers, MiniLM embeddings" },
-      { name: "Prompt Defense", desc: "InputGuard, OutputGuard, MemoryGuard" },
+      { name: "Corrective RAG (CRAG)", desc: "HyDE expansion, Parent-Child chunking & BM25" },
+      { name: "Zero-Trust Guardrails", desc: "InputGuard, OutputGuard, Luhn credit card check & PII redaction" },
     ]
   },
   {
@@ -76,7 +76,7 @@ const skillsData = [
     accentColor: "from-emerald-400 to-teal-500",
     glowBorder: "hover:border-emerald-400",
     tools: [
-      { name: "Qdrant Vector DB", desc: "Dense vector indexing, semantic RAG memory" },
+      { name: "Qdrant Vector DB", desc: "Dense 768d/384d indexing, HMAC-SHA256 identity-scoped memory" },
       { name: "PostgreSQL (Neon Cloud)", desc: "B-Tree indexes, analytical views, DDL" },
       { name: "MySQL & SQLite", desc: "Relational audit ledgers & CTE pipelines" },
       { name: "Advanced SQL", desc: "Window functions, subqueries, complex joins" },
@@ -93,7 +93,7 @@ const skillsData = [
     tools: [
       { name: "Frappe Framework", desc: "Enterprise Python full-stack framework & controller hooks" },
       { name: "DocTypes Architecture", desc: "Custom schema modeling, state transitions & RBAC" },
-      { name: "FastAPI", desc: "Asynchronous REST endpoints, Swagger specs" },
+      { name: "FastAPI & SSE Streaming", desc: "High-throughput async REST endpoints & Server-Sent Events" },
       { name: "Pydantic", desc: "Runtime schema validation & data contracts" },
       { name: "Workflow Automation", desc: "Business process routing & B2B procurement automation" },
       { name: "Streamlit", desc: "Rapid deployment of AI/ML web interfaces" },

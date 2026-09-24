@@ -31,10 +31,10 @@ const Hero = ({ onOpenAgent }) => {
           <div className="flex flex-wrap gap-2.5 mb-8">
             {[
               { text: 'SDE Intern @ Trafasa', color: 'text-emerald-400', border: 'border-emerald-400/30', dot: 'bg-emerald-400' },
+              { text: 'Patent #202631059925 (AGENT_MIND)', color: 'text-purple-400', border: 'border-purple-400/30', dot: 'bg-purple-400' },
+              { text: 'NexusRAG (GraphRAG & FastAPI)', color: 'text-blue-400', border: 'border-blue-400/30', dot: 'bg-blue-400' },
               { text: '98% Model Accuracy', color: 'text-accent-cyan', border: 'border-accent-cyan/30', dot: 'bg-accent-cyan' },
               { text: 'Top 6K / 55K+ Hackathon', color: 'text-accent-amber', border: 'border-accent-amber/30', dot: 'bg-accent-amber' },
-              { text: 'Patent-Filed Neuroplexa AI', color: 'text-purple-400', border: 'border-purple-400/30', dot: 'bg-purple-400' },
-              { text: 'LangGraph Cyclic Systems', color: 'text-blue-400', border: 'border-blue-400/30', dot: 'bg-blue-400' },
             ].map((badge, idx) => (
               <motion.div
                 key={idx}
@@ -74,9 +74,9 @@ const Hero = ({ onOpenAgent }) => {
               words={[
                 'SDE Intern @ Trafasa',
                 'Agentic AI Developer',
-                'LangGraph Systems Architect',
-                'Machine Learning Engineer',
-                'Backend & Python Engineer'
+                'Patent #202631059925 Inventor',
+                'NexusRAG & GraphRAG Architect',
+                'LangGraph Systems Engineer'
               ]}
               loop={0}
               cursor

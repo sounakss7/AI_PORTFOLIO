@@ -45,6 +45,21 @@ const scenarios = [
       { node: 'LangGraph Cyclic Loop', status: 'REROUTED', detail: 'Self-correcting cyclic graph triggered reroute: LA -> Seattle Harbor', latency: '14ms' },
       { node: 'SLA Optimizer', status: 'SAVED', detail: 'Delivery schedule preserved. Projected SLA penalty avoided: $95,000', latency: '7ms' }
     ]
+  },
+  {
+    id: 'nexus-rag',
+    name: 'NexusRAG // Autonomous Deep-Research & Graph-RAG',
+    description: 'Master Planner query decomposition, 3-Way RRF (Qdrant + BM25 + GraphRAG), and Python sandbox math.',
+    accentColor: 'text-blue-400',
+    borderColor: 'border-blue-400',
+    steps: [
+      { node: 'Master Planner', status: 'DECOMPOSE', detail: 'Multi-turn query decomposed into 2 sub-queries + HyDE technical expansion', latency: '8ms' },
+      { node: '3-Way Hybrid RRF', status: 'FUSED', detail: 'Qdrant 768d + BM25 Lucene + NetworkX 2-hop Subgraph traversed (RRF k=60)', latency: '19ms' },
+      { node: 'FlashRank Cross-Encoder', status: 'RERANKED', detail: 'ms-marco-TinyBERT scored top 4 enriched parent context sections', latency: '12ms' },
+      { node: 'Python Code Sandbox', status: 'CALCULATED', detail: 'Deterministic Pandas/NumPy execution: Arithmetic verified (0% hallucination)', latency: '14ms' },
+      { node: 'Critic Self-Reflection', status: 'VERIFIED', detail: 'Self-reflection loop confirmed 100% claim grounding & citations ([1], [2])', latency: '9ms' },
+      { node: 'FastAPI SSE Stream', status: 'STREAMED', detail: 'Server-Sent Events token stream emitted with RAGAS F1 score: 0.94', latency: '5ms' }
+    ]
   }
 ];
 

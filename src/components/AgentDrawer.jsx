@@ -1,16 +1,24 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, Bot, Terminal, ArrowRight, Cpu } from 'lucide-react';
+import { X, Send, Bot, Terminal, ArrowRight, Cpu, AlertTriangle, Sparkles } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
 
 const knowledgeBase = [
   {
-    keywords: ['patent', 'agent mind', 'neuroplexa', 'sanjoy', 'institution'],
-    title: 'Patent-Filed Agent Mind (Neuroplexa AI)',
-    answer: `Agent Mind is Sounak's flagship multi-agent system, filed as an institutional patent application under the Neuroplexa AI brand at Dr. Sudhir Chandra Sur Institute of Technology (mentored by Prof. Dr. Sanjoy Bhattacharjee).\n\nKey Architectural Highlights:\n• LangGraph Cyclic StateGraph routing across 4 nodes: Tavily web search, Pollinations AI image generation, dual-model comparison, and OCR document analysis.\n• Dual-model judge framework (Gemini 2.5 Flash vs. Groq Llama 3.1) autonomously arbitrated by Mistral Small.\n• 4-Layer Enterprise Defense Pipeline: InputGuard -> OutputGuard -> MemoryGuard -> AuditLogger blocking 20+ prompt injection vectors.\n• Qdrant Cloud vector memory with HuggingFace MiniLM embeddings + token-level LangSmith tracing.\n• Live deployment: multimodel.streamlit.app`,
+    keywords: ['nexusrag', 'nexus', 'agentic-rag', 'agentic rag', 'graphrag', 'graph-rag', 'fastapi', 'rrf', 'flashrank', 'chunking', 'sandbox'],
+    title: 'NexusRAG: Deep-Research & Graph-RAG Engine',
+    answer: `NexusRAG (github.com/sounakss7/agentic-rag-engine) is Sounak's enterprise-grade multi-agent autonomous research engine built on FastAPI and LangGraph.\n\nCore Subsystems & Innovations:\n• 3-Way Reciprocal Rank Fusion (RRF, k=60): Combines Qdrant Dense (768d gemini-embedding-001) + Sparse Lexical Lucene-smoothed Non-Negative BM25 + NetworkX Knowledge Graph MultiDiGraph (1-hop & 2-hop entity-relation-entity triple store).\n• FlashRank Cross-Encoder: ms-marco-TinyBERT-L-2-v2 reranks top 15 candidate passages into top 4 enriched contexts.\n• Layout-Aware Parser & Parent-Child Hierarchical Chunker: Indexes compact 250-char child passages for pinpoint vector/keyword search, but resolves 1,200-char parent sections preserving complete paragraphs and markdown tables.\n• Deterministic Python Code Sandbox: Executes Pandas/NumPy code in an isolated sandbox for financial & statistical calculations, achieving 0% mathematical hallucinations.\n• Citation & Hallucination Critic: Self-reflection verification ensuring 100% claim grounding with numerical citations ([1], [2]).\n• Real-Time Streaming: Asynchronous FastAPI Server-Sent Events (SSE) streaming (/api/v1/chat/stream) with automated OpenAPI /docs and Docker Compose deployment.`,
     sectionTarget: 'projects',
-    confidence: '99.4%',
-    latency: '18ms'
+    confidence: '99.7%',
+    latency: '14ms'
+  },
+  {
+    keywords: ['patent', 'agent mind', 'neuroplexa', '202631059925', 'ipo', 'inpass', 'sanjoy', 'institution'],
+    title: 'Patent #202631059925: Neuroplexa AI (AGENT_MIND)',
+    answer: `Agent Mind (github.com/sounakss7/AGENT_MIND) is Sounak's flagship multi-modal system, officially protected under Indian Patent Application #202631059925 (IPO Kolkata Branch, CGPDTM):\n"Multi-Model Agentic AI System with Mixture of Agents & Vector Security Pipeline (AGENT_MIND)".\n\n5 Novel Patented Methodologies:\n1. Zero-Latency Deterministic SelfRouter (<0.1ms): Regex + negative boundary constraints routing multi-modal intent (Text, Search, Image, OCR) without external LLM inference, preventing token exhaustion and 429 quota spikes.\n2. Mixture of Agents (MoA) Arena: Parallel execution across Groq gpt-oss-120b, DeepSeek-V3, Moonshot Kimi, and Google Gemini, arbitrated blind by Mistral Small against a structured rubric.\n3. Dynamic Human-in-the-Loop (HITL) Override: Operator preference injection dynamically re-weighting candidate answers for downstream memory storage.\n4. 4-Layer Zero-Trust Vector Security: InputGuard (20+ injections blocked) -> OutputGuard (Luhn credit card algorithm & PII redaction) -> MemoryGuard -> Immutable Qdrant Cloud audit logging.\n5. Cryptographic Identity Scoping: Deterministic HMAC-SHA256(Name || PIN, Pepper) guaranteeing strict cross-tenant memory isolation in Qdrant.\n• Production Quality: 101/101 automated unit and integration tests passing with pytest.`,
+    sectionTarget: 'projects',
+    confidence: '99.9%',
+    latency: '11ms'
   },
   {
     keywords: ['scm', 'supply chain', 'savings', '310k', 'carrier', 'logistics', 'hackathon'],
@@ -31,7 +39,7 @@ const knowledgeBase = [
   {
     keywords: ['skill', 'tools', 'stack', 'languages', 'python', 'langchain', 'tech'],
     title: 'Technical Matrix & Core Stack',
-    answer: `Sounak specializes in the intersection of Agentic AI, Classical Machine Learning, and Cloud Data Pipelines:\n\n• Agentic AI & LLMs: LangGraph, LangChain, LangSmith, Multi-Agent StateGraphs, RAG, RRF Fusion, BM25, HyDE, Prompt Security.\n• Machine Learning: XGBoost, Scikit-Learn, TensorFlow, Ensemble Models, SHAP Explainability.\n• Data & Databases: Python, SQL, PostgreSQL (Neon Cloud), SQLite, Qdrant Vector DB, Pandas, NumPy, Power BI.\n• APIs & Deployment: FastAPI, Streamlit, Docker, Render, Vercel, Git.`,
+    answer: `Sounak specializes in the intersection of Agentic AI, Classical Machine Learning, and Cloud Data Pipelines:\n\n• Agentic AI & LLMs: LangGraph, LangChain, LangSmith, Multi-Agent StateGraphs, RAG, GraphRAG (NetworkX), RRF Fusion (k=60), BM25, HyDE, FlashRank Cross-Encoders.\n• Machine Learning: XGBoost, Scikit-Learn, TensorFlow, Ensemble Models, SHAP Explainability.\n• Data & Databases: Python, SQL, PostgreSQL (Neon Cloud), SQLite, Qdrant Vector DB (768d & 384d), Pandas, NumPy, Power BI.\n• APIs & Deployment: FastAPI, Frappe Framework, Streamlit, Docker, Render, Vercel, Git.`,
     sectionTarget: 'skills',
     confidence: '99.8%',
     latency: '12ms'
@@ -39,7 +47,7 @@ const knowledgeBase = [
   {
     keywords: ['hackathon', 'et genai', 'vidyawan', 'rank', 'achievement', 'awards'],
     title: 'National Hackathons & Recognitions',
-    answer: `Major Recognitions:\n• ET GenAI Hackathon 2026: Qualified for Phase 2, ranking in the Top 6,000 teams out of 55,000+ nationwide contenders.\n• CS Mastermind Leaderboard (The Vidyawan): Ranked #14 nationally.\n• Institutional Patent Application: Filed for Neuroplexa AI under MAKAUT / SurTech mentorship.\n• Open-Source Reach: 64+ developer clones on clinical ML detection repository.`,
+    answer: `Major Recognitions:\n• ET GenAI Hackathon 2026: Qualified for Phase 2, ranking in the Top 6,000 teams out of 55,000+ nationwide contenders.\n• CS Mastermind Leaderboard (The Vidyawan): Ranked #14 nationally.\n• Indian Patent Application: Filed for Neuroplexa AI (#202631059925) under MAKAUT / SurTech mentorship.\n• Open-Source Reach: 64+ developer clones on clinical ML detection repository.`,
     sectionTarget: 'achievements',
     confidence: '99.5%',
     latency: '16ms'
@@ -63,12 +71,76 @@ const knowledgeBase = [
 ];
 
 const presetQuestions = [
+  "Explain NexusRAG (GraphRAG + FastAPI)",
+  "What is Patent #202631059925 (AGENT_MIND)?",
   "What does Sounak do at Trafasa?",
-  "Explain the Patent on Agent Mind",
-  "How does the SCM 5-agent system save $310K?",
+  "How does the SCM workflow save $310K?",
   "Show Breast Cancer Detection metrics",
   "What is Sounak's core tech stack?"
 ];
+
+// Scope Guardrail: Detects whether a query is linked with Sounak Sarkar's portfolio
+const evaluatePortfolioScope = (query) => {
+  const q = query.toLowerCase().trim();
+
+  // 1. Direct match in knowledge base
+  const directMatch = knowledgeBase.find((item) =>
+    item.keywords.some((kw) => q.includes(kw))
+  );
+  if (directMatch) return { isRelevant: true, match: directMatch };
+
+  // 2. Common relevant portfolio & technical domain terms
+  const inScopeTerms = [
+    'sounak', 'sarkar', 'portfolio', 'resume', 'cv', 'background', 'profile', 'who is',
+    'project', 'projects', 'work', 'works', 'experience', 'intern', 'internship', 'trafasa',
+    'agent', 'agents', 'agentic', 'langgraph', 'langchain', 'langsmith', 'stategraph',
+    'rag', 'crag', 'graphrag', 'nexus', 'nexusrag', 'bm25', 'rrf', 'flashrank', 'hyde',
+    'python', 'fastapi', 'frappe', 'doctype', 'streamlit', 'docker', 'qdrant', 'vector',
+    'sql', 'postgres', 'sqlite', 'redis', 'database', 'etl', 'pipeline', 'pandas', 'numpy',
+    'xgboost', 'shap', 'cancer', 'breast cancer', 'clinical', 'medical', 'accuracy',
+    'scm', 'supply chain', 'logistics', 'savings', 'hackathon', 'et genai', 'vidyawan',
+    'patent', 'patented', 'invention', 'neuroplexa', '202631059925', 'ipo', 'inpass',
+    'surtech', 'makaut', 'bhattacharjee', 'college', 'degree', 'education', 'gpa',
+    'contact', 'email', 'hire', 'hiring', 'github', 'linkedin', 'phone', 'kolkata', 'location',
+    'selfrouter', 'guardrail', 'guard', 'luhn', 'pii', 'moa', 'mistral', 'gemini', 'groq',
+    'deepseek', 'kimi', 'tavily', 'pollinations', 'tesseract', 'ocr', 'audit', 'security',
+    'who are you', 'what can you do', 'help', 'overview', 'skills', 'stack', 'technologies'
+  ];
+
+  const hasRelevantTerm = inScopeTerms.some((term) => q.includes(term));
+  if (hasRelevantTerm) {
+    return {
+      isRelevant: true,
+      match: {
+        title: 'Neural Portfolio Telemetry',
+        answer: `I analyzed your portfolio inquiry: "${query}". Sounak Sarkar is an Agentic AI Developer & SDE Intern at Trafasa, specializing in LangGraph cyclic stategraphs, Indian Patent #202631059925 (AGENT_MIND), NexusRAG (GraphRAG + FastAPI), and 98% accuracy clinical ML systems. Feel free to explore his projects below or connect directly at hrick3130@gmail.com.`,
+        sectionTarget: 'projects',
+        confidence: '95.0%',
+        latency: '18ms'
+      }
+    };
+  }
+
+  // 3. Otherwise: Irrelevant prompt
+  return {
+    isRelevant: false,
+    match: {
+      isOutOfScope: true,
+      title: 'Query Out of Portfolio Scope',
+      answer: `⚠️ Notice: Your query "${query}" is not linked with Sounak Sarkar's portfolio, engineering projects, patent claims, or professional experience.\n\nAgent Mind is strictly scoped to provide verified technical telemetry on Sounak's work, architectures, and deployments.`,
+      suggestedQueries: [
+        "Explain NexusRAG (GraphRAG + Qdrant + FastAPI engine)",
+        "What are the claims in Patent #202631059925 (AGENT_MIND)?",
+        "What does Sounak do in his SDE Internship at Trafasa?",
+        "How does the SCM 5-agent system save $310K/month?",
+        "Show Breast Cancer Detection 98% accuracy and SHAP",
+        "What is Sounak's core tech stack and contact info?"
+      ],
+      confidence: 'OUT_OF_SCOPE',
+      latency: '2ms'
+    }
+  };
+};
 
 const AgentDrawer = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState([
@@ -95,38 +167,30 @@ const AgentDrawer = ({ isOpen, onClose }) => {
     setInputQuery('');
     setIsTyping(true);
 
-    // Search knowledge base
-    const lowerQuery = queryText.toLowerCase();
-    let bestMatch = knowledgeBase.find((item) =>
-      item.keywords.some((kw) => lowerQuery.includes(kw))
-    );
-
-    if (!bestMatch) {
-      bestMatch = {
-        title: 'Neural Inference',
-        answer: `I analyzed your query: "${queryText}". Sounak is a specialist in LangGraph cyclic agent workflows, clinical ML diagnostic models (98% accuracy), and end-to-end cloud data pipelines. Feel free to explore his projects below or connect directly at hrick3130@gmail.com.`,
-        sectionTarget: 'projects',
-        confidence: '92.0%',
-        latency: '24ms'
-      };
-    }
+    const { isRelevant, match } = evaluatePortfolioScope(queryText);
 
     setTimeout(() => {
       setIsTyping(false);
-      sounds.success();
+      if (isRelevant) {
+        sounds.success();
+      } else {
+        sounds.terminalKey();
+      }
       setMessages((prev) => [
         ...prev,
         {
           sender: 'agent',
-          title: bestMatch.title,
-          text: bestMatch.answer,
-          sectionTarget: bestMatch.sectionTarget,
-          confidence: bestMatch.confidence,
-          latency: bestMatch.latency,
+          title: match.title,
+          text: match.answer,
+          isOutOfScope: match.isOutOfScope,
+          suggestedQueries: match.suggestedQueries,
+          sectionTarget: match.sectionTarget,
+          confidence: match.confidence,
+          latency: match.latency,
           time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         }
       ]);
-    }, 750);
+    }, 600);
   };
 
   const handleNavigateToSection = (sectionId) => {
@@ -219,15 +283,22 @@ const AgentDrawer = ({ isOpen, onClose }) => {
                     className={`max-w-[88%] p-4 rounded-2xl text-sm font-sans ${
                       msg.sender === 'user'
                         ? 'bg-accent-cyan text-obsidian font-medium rounded-tr-none'
+                        : msg.isOutOfScope
+                        ? 'bg-obsidian border-2 border-accent-amber/50 text-text-primary rounded-tl-none shadow-[0_0_25px_rgba(245,166,35,0.15)]'
                         : 'bg-obsidian border border-border-subtle text-text-primary rounded-tl-none'
                     }`}
                   >
                     {msg.title && (
-                      <div className="font-heading font-bold text-accent-cyan text-xs uppercase tracking-wider mb-2 flex items-center justify-between border-b border-border-subtle/60 pb-1.5">
-                        <span>{msg.title}</span>
+                      <div className={`font-heading font-bold text-xs uppercase tracking-wider mb-2 flex items-center justify-between border-b pb-1.5 ${
+                        msg.isOutOfScope ? 'text-accent-amber border-accent-amber/30' : 'text-accent-cyan border-border-subtle/60'
+                      }`}>
+                        <span className="flex items-center gap-1.5">
+                          {msg.isOutOfScope ? <AlertTriangle className="w-3.5 h-3.5 text-accent-amber" /> : <Bot className="w-3.5 h-3.5 text-accent-cyan" />}
+                          {msg.title}
+                        </span>
                         {msg.confidence && (
-                          <span className="font-code text-[10px] text-emerald-400">
-                            Confidence: {msg.confidence}
+                          <span className={`font-code text-[10px] ${msg.isOutOfScope ? 'text-accent-amber font-semibold' : 'text-emerald-400'}`}>
+                            {msg.isOutOfScope ? 'NOT_LINKED' : `Confidence: ${msg.confidence}`}
                           </span>
                         )}
                       </div>
@@ -236,6 +307,28 @@ const AgentDrawer = ({ isOpen, onClose }) => {
                     <p className="whitespace-pre-line leading-relaxed text-xs sm:text-sm">
                       {msg.text}
                     </p>
+
+                    {/* Clickable Suggested Queries for Out-Of-Scope Prompts */}
+                    {msg.suggestedQueries && (
+                      <div className="mt-4 pt-3 border-t border-border-subtle/70">
+                        <div className="text-[11px] font-code text-accent-cyan font-semibold mb-2 flex items-center gap-1.5">
+                          <Sparkles className="w-3.5 h-3.5 text-accent-cyan" />
+                          <span>Ask these portfolio queries instead:</span>
+                        </div>
+                        <div className="flex flex-col gap-1.5">
+                          {msg.suggestedQueries.map((suggested, sIdx) => (
+                            <button
+                              key={sIdx}
+                              onClick={() => handleAsk(suggested)}
+                              className="text-left px-3.5 py-2 bg-surface hover:bg-accent-cyan/10 border border-border-subtle hover:border-accent-cyan/50 rounded-xl text-[11px] font-code text-text-primary transition-all flex items-center justify-between group"
+                            >
+                              <span>{suggested}</span>
+                              <ArrowRight className="w-3 h-3 text-text-muted group-hover:text-accent-cyan group-hover:translate-x-1 transition-all shrink-0 ml-2" />
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
 
                     {msg.sectionTarget && (
                       <div className="mt-3 pt-2 border-t border-border-subtle/50 flex items-center justify-between">

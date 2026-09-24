@@ -21,31 +21,31 @@ const projectCategories = [
 const projectsData = [
   {
     id: "agent-mind",
-    title: "Agent Mind",
+    title: "Agent Mind (Neuroplexa AI)",
     category: "agentic",
-    tags: "Agentic AI · LangGraph · Patent-Filed",
+    tags: "Agentic AI · Indian Patent #202631059925 · LangGraph · Qdrant",
     accentText: "text-accent-cyan",
     accentBg: "bg-accent-cyan",
     accentBorderHover: "hover:border-accent-cyan",
     accentShadowHover: "hover:shadow-[0_0_35px_-5px_rgba(0,245,212,0.25)]",
     featured: true,
     flowNodes: [
-      { name: "InputGuard", role: "20+ Injections Blocked" },
-      { name: "LangGraph Router", role: "StateGraph Dynamic Dispatch" },
-      { name: "Tavily / Pollinations", role: "Search & Vision Generation" },
-      { name: "Mistral Judge", role: "Dual-Model Evaluator" },
-      { name: "Qdrant Vector DB", role: "Persistent Memory RAG" }
+      { name: "SelfRouter", role: "<0.1ms Deterministic Automata" },
+      { name: "InputGuard / PII", role: "20+ Injections & Luhn Check" },
+      { name: "MoA Arena", role: "Groq, DeepSeek-V3, Gemini, Kimi" },
+      { name: "Blind LLM Judge", role: "Mistral Small + HITL Override" },
+      { name: "Vector Memory", role: "HMAC-SHA256 Isolated Qdrant" }
     ],
     content: [
-      "Architected a production-grade multi-tool AI agent (LangGraph StateGraph) routing queries across 4 specialized nodes: Tavily web search, Pollinations AI image generation, dual-model comparison, and OCR document analysis with Tesseract fallback.",
-      "Built a dual-model comparison framework (Gemini 2.5 Flash vs. Groq/Llama 3.1) with Mistral Small as an autonomous LLM-judge evaluating response quality across a 100-query evaluation set.",
-      "Implemented a 4-layer production security pipeline (InputGuard -> OutputGuard -> MemoryGuard -> AuditLogger) blocking prompt injection, PII leakage, and adversarial inputs validated against 20+ injection vectors.",
-      "Integrated Qdrant Cloud with HuggingFace MiniLM-L6-v2 embeddings for persistent RAG cross-session memory, instrumented via LangSmith for token-level distributed tracing.",
-      "Filed an institutional patent application under the Neuroplexa AI brand through Dr. Sudhir Chandra Sur Institute of Technology, mentored by Prof. Dr. Sanjoy Bhattacharjee."
+      "Formally protected under Indian Patent Application #202631059925 (IPO Kolkata, CGPDTM): 'Multi-Model Agentic AI System with Mixture of Agents & Vector Security Pipeline (AGENT_MIND)'.",
+      "Architected a sub-millisecond (<0.1ms) deterministic SelfRouter automata with negative boundary constraints resolving multi-modal intent (Text, Search, Vision, OCR) without external LLM token exhaustion or 429 quota errors.",
+      "Engineered a closed-loop Mixture of Agents (MoA) Arena pitting Groq (gpt-oss-120b), DeepSeek-V3, Moonshot Kimi, and Google Gemini against each other, scored blind by an independent Mistral judge with Human-in-the-Loop (HITL) preference learning.",
+      "Implemented an enterprise 4-layer zero-trust vector security pipeline (InputGuard -> OutputGuard -> MemoryGuard -> AuditLogger) with Luhn-verified payment card and PII redaction, logging security telemetry directly to Qdrant Cloud.",
+      "Cryptographically isolated multi-tenant vector memory using HMAC-SHA256(Name || PIN, Pepper) scoping, backed by 101/101 automated unit/integration tests with pytest."
     ],
-    badges: ["Patent-Filed", "4-Layer Security", "LangSmith Traced", "Dual-Model Judge"],
-    brandNote: "Neuroplexa AI — mentored by Prof. Dr. Sanjoy Bhattacharjee (SurTech)",
-    link: "https://github.com/sounakss7",
+    badges: ["Indian Patent #202631059925", "101/101 Tests Passing", "4-Layer Zero-Trust", "MoA Arena + HITL", "Qdrant Cloud"],
+    brandNote: "Protected under Indian Patent Application #202631059925 (IPO Kolkata Branch, CGPDTM) — Neuroplexa AI, mentored by Prof. Dr. Sanjoy Bhattacharjee (SurTech)",
+    link: "https://github.com/sounakss7/AGENT_MIND",
     demoLink: "https://multimodel.streamlit.app"
   },
   {
@@ -103,28 +103,28 @@ const projectsData = [
   },
   {
     id: "agentic-rag",
-    title: "Agentic RAG Engine",
+    title: "NexusRAG: Deep-Research & Graph-RAG Engine",
     category: "agentic",
-    tags: "Agentic AI · Corrective RAG · LangGraph · Qdrant",
+    tags: "FastAPI · LangGraph · NetworkX GraphRAG · Qdrant · FlashRank",
     accentText: "text-blue-400",
     accentBg: "bg-blue-400",
     accentBorderHover: "hover:border-blue-400",
     accentShadowHover: "hover:shadow-[0_0_35px_-5px_rgba(96,165,250,0.25)]",
     flowNodes: [
-      { name: "HyDE Generator", role: "Hypothetical Doc Query" },
-      { name: "Hybrid Search", role: "BM25 + Dense Qdrant Embeddings" },
-      { name: "FlashRank", role: "Cross-Encoder Reranking" },
-      { name: "Context Grader", role: "Hallucination Assessment" },
-      { name: "Tavily Fallback", role: "Automated Web Verification" }
+      { name: "Master Planner", role: "Query Decomposition & HyDE" },
+      { name: "3-Way Hybrid RRF", role: "Qdrant 768d + BM25 + GraphRAG" },
+      { name: "FlashRank Reranker", role: "ms-marco Cross-Encoder" },
+      { name: "Python Sandbox", role: "Deterministic Pandas/NumPy Math" },
+      { name: "Critic & SSE Stream", role: "Hallucination Audit & Streaming" }
     ],
     content: [
-      "Built an enterprise Corrective RAG (CRAG) system powered by LangGraph, Gemini 2.5 Flash, Qdrant Vector DB, Rank-BM25, and Tavily Fallback Web Search.",
-      "Implemented a self-corrective 5-node graph loop: HyDE query generator, Hybrid Search (BM25 + Qdrant text-embedding-004 + RRF Fusion), FlashRank Cross-Encoder reranker, LLM Context Grader, and Fallback Web Search.",
-      "Engineered multimodal document ingestion & OCR (pdf2image & PyTesseract) supporting PDF, TXT, MD, and image files with intelligent character chunking.",
-      "Integrated an automated benchmark RAGAS Evaluation Dashboard measuring Faithfulness (hallucination audit) and Context Precision (signal-to-noise ratio).",
-      "Deployed live at agentic-rag-engine.streamlit.app with a real-time visual LangGraph execution trace."
+      "Architected an enterprise-grade autonomous research engine combining Layout-Aware document parsing, Parent-Child hierarchical chunking (250-char child passages linked to 1,200-char parent sections), and 3-way hybrid retrieval.",
+      "Engineered 3-Way Reciprocal Rank Fusion (RRF, k=60) combining Qdrant dense vectors (gemini-embedding-001 768d), Lucene-smoothed non-negative BM25 sparse lexical search, and NetworkX Knowledge Graph (GraphRAG) 1-hop & 2-hop entity-relation-entity traversal.",
+      "Built a deterministic Python Code Interpreter Sandbox using Pandas & NumPy to execute tabular arithmetic and financial ratios, completely eliminating LLM mathematical hallucinations.",
+      "Implemented an autonomous Master Planner with sub-query decomposition, a Citation & Hallucination Critic with self-reflection loops, and FlashRank cross-encoder reranking.",
+      "Exposed asynchronous high-throughput FastAPI REST & Server-Sent Events (SSE) streaming endpoints (/api/v1/chat/stream) with automated Swagger UI documentation and Docker Compose deployment."
     ],
-    badges: ["Corrective RAG (CRAG)", "Hybrid RRF & FlashRank", "RAGAS Evaluated"],
+    badges: ["FastAPI & SSE Streaming", "GraphRAG & NetworkX", "3-Way Hybrid RRF", "Deterministic Python Sandbox", "FlashRank Cross-Encoder", "Docker Ready"],
     link: "https://github.com/sounakss7/agentic-rag-engine",
     demoLink: "https://agentic-rag-engine.streamlit.app"
   },
