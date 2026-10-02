@@ -17,6 +17,7 @@ import ProjectModal from './components/ProjectModal';
 import { Bot, ArrowUp } from 'lucide-react';
 import { sounds } from './utils/soundEffects';
 import { LiveViewPill } from './components/LiveViewCounter';
+import { trackEvent } from './utils/analytics';
 
 function App() {
   const [isAgentOpen, setIsAgentOpen] = useState(false);
@@ -39,8 +40,25 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const openAgent = (trigger = 'general') => {
+    trackEvent('open_agent_mind', { trigger });
+    setIsAgentOpen(true);
+  };
+
+  const handleSelectProject = (project) => {
+    if (project) {
+      trackEvent('view_project_modal', {
+        project_id: project.id,
+        project_title: project.title,
+        category: project.category
+      });
+    }
+    setSelectedProject(project);
+  };
+
   const scrollToTop = () => {
     sounds.click();
+    trackEvent('scroll_to_top');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -56,18 +74,18 @@ function App() {
       <CustomCursor />
 
       {/* Floating Navigation Command Bar */}
-      <Navbar onOpenAgent={() => setIsAgentOpen(true)} />
+      <Navbar onOpenAgent={() => openAgent('navbar')} />
 
       {/* Main Content Sections */}
       <main>
-        <Hero onOpenAgent={() => setIsAgentOpen(true)} />
+        <Hero onOpenAgent={() => openAgent('hero')} />
         <About />
         <Experience />
         <div className="max-w-7xl mx-auto px-6">
           <AgentSimulator />
         </div>
         <Skills />
-        <Projects onSelectProject={(project) => setSelectedProject(project)} />
+        <Projects onSelectProject={handleSelectProject} />
         <Achievements />
         <Certifications />
         <Education />
@@ -109,7 +127,7 @@ function App() {
           whileTap={{ scale: 0.95 }}
           onClick={() => {
             sounds.modal();
-            setIsAgentOpen(true);
+            openAgent('floating_pill');
           }}
           className="flex items-center gap-2.5 px-4 py-3 bg-surface/95 hover:bg-obsidian border border-accent-cyan/50 text-accent-cyan rounded-full font-code text-xs font-semibold shadow-[0_0_25px_rgba(0,245,212,0.25)] backdrop-blur-xl group"
         >

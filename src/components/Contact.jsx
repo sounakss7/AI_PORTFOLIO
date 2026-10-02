@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { SectionHeader } from './About';
 import { Mail, Send, Check, Copy, Code2 } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
+import { trackEvent } from '../utils/analytics';
 
 const GithubIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -37,6 +38,7 @@ const Contact = () => {
 
   const handleCopyEmail = () => {
     sounds.click();
+    trackEvent('copy_email');
     navigator.clipboard.writeText('hrick3130@gmail.com');
     setCopiedEmail(true);
     sounds.success();
@@ -48,6 +50,7 @@ const Contact = () => {
     if (!formData.name || !formData.email || !formData.message) return;
 
     sounds.click();
+    trackEvent('submit_contact_form', { sender_name: formData.name });
     setIsSubmitting(true);
 
     // Simulate encrypted dispatch sequence
@@ -65,6 +68,7 @@ const Contact = () => {
     if (!cmd) return;
 
     sounds.terminalKey();
+    trackEvent('execute_cli_command', { command: cmd });
     const newHistory = [...cliHistory, { type: 'input', text: `$ ${cliInput}` }];
 
     switch (cmd) {
@@ -131,6 +135,7 @@ const Contact = () => {
         });
         break;
       case 'resume':
+        trackEvent('click_resume', { location: 'cli_terminal' });
         window.open('./resume.pdf', '_blank');
         newHistory.push({ type: 'output', text: 'Opening resume.pdf in new tab...' });
         break;

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, Bot, Terminal, ArrowRight, Cpu, AlertTriangle, Sparkles } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
+import { trackEvent } from '../utils/analytics';
 
 const knowledgeBase = [
   {
@@ -169,6 +170,11 @@ const AgentDrawer = ({ isOpen, onClose }) => {
     setIsTyping(true);
 
     const { isRelevant, match } = evaluatePortfolioScope(queryText);
+    trackEvent('ask_agent_mind', {
+      query: queryText.slice(0, 100),
+      is_relevant: isRelevant,
+      topic: match?.title || 'Unknown'
+    });
 
     setTimeout(() => {
       setIsTyping(false);

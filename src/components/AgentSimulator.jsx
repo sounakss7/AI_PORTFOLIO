@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Play, RotateCcw, Cpu, GitBranch, Terminal, CheckCircle2 } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
+import { trackEvent } from '../utils/analytics';
 
 const scenarios = [
   {
@@ -79,6 +80,7 @@ const AgentSimulator = () => {
   const runSimulation = () => {
     if (isRunning) return;
     sounds.click();
+    trackEvent('run_agent_simulation', { scenario_id: scenario.id, scenario_name: scenario.name });
     setIsRunning(true);
     setCurrentStepIndex(0);
     setLogFeed([`[SYS_INIT] Initializing StateGraph for: ${scenario.name}...`]);

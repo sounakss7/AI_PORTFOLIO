@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, GitBranch, Layers, Sliders, CheckCircle2, AlertTriangle, ShieldCheck, Cpu, Database, Network, Code, Truck, Activity } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
+import { trackEvent } from '../utils/analytics';
 
 const GithubIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -546,7 +547,10 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => sounds.click()}
+                  onClick={() => {
+                    sounds.click();
+                    trackEvent('click_project_github', { project_id: project.id, url: project.link });
+                  }}
                   className="flex items-center gap-2 px-5 py-2.5 bg-obsidian hover:bg-surface border border-border-subtle hover:border-accent-cyan text-text-primary font-code text-xs rounded-xl transition-all"
                 >
                   <GithubIcon />
@@ -558,7 +562,10 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                     href={project.demoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => sounds.click()}
+                    onClick={() => {
+                      sounds.click();
+                      trackEvent('click_project_demo', { project_id: project.id, url: project.demoLink });
+                    }}
                     className="flex items-center gap-2 px-5 py-2.5 bg-accent-cyan text-obsidian font-heading font-bold text-xs rounded-xl hover:bg-white transition-all shadow-[0_0_15px_rgba(0,245,212,0.3)]"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />

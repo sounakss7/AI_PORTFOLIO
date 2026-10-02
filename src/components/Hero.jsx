@@ -4,6 +4,7 @@ import { ChevronDown, ArrowRight, Download, Bot, Terminal, Activity, ShieldCheck
 import NeuralCanvas from './NeuralCanvas';
 import { sounds } from '../utils/soundEffects';
 import { LiveViewTelemetryCard } from './LiveViewCounter';
+import { trackEvent } from '../utils/analytics';
 
 const Hero = ({ onOpenAgent }) => {
   return (
@@ -100,7 +101,10 @@ const Hero = ({ onOpenAgent }) => {
           >
             <a
               href="#projects"
-              onClick={() => sounds.click()}
+              onClick={() => {
+                sounds.click();
+                trackEvent('click_explore_works');
+              }}
               onMouseEnter={() => sounds.hover()}
               className="group flex items-center gap-3 px-7 py-3.5 bg-accent-cyan text-obsidian font-heading font-bold rounded-xl hover:bg-white hover:shadow-[0_0_25px_rgba(0,245,212,0.4)] transition-all duration-300"
             >
@@ -124,7 +128,10 @@ const Hero = ({ onOpenAgent }) => {
               href="./resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => sounds.click()}
+              onClick={() => {
+                sounds.click();
+                trackEvent('click_resume', { location: 'hero' });
+              }}
               onMouseEnter={() => sounds.hover()}
               className="flex items-center gap-2 px-5 py-3.5 border border-border-subtle bg-surface/40 backdrop-blur-md text-text-muted font-heading text-sm rounded-xl hover:text-text-primary hover:border-text-muted transition-all duration-300"
             >
