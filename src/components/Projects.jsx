@@ -50,28 +50,28 @@ const projectsData = [
   },
   {
     id: "scm-workflow",
-    title: "SCM Agentic Workflow",
+    title: "Indian SCM Resilience Agent",
     category: "agentic",
-    tags: "Agentic AI · LangGraph · Multi-Agent SCM",
+    tags: "LangGraph · Deterministic OR Solver · Gemini 2.5 Flash + Groq LPU · FastAPI",
     accentText: "text-accent-red",
     accentBg: "bg-accent-red",
     accentBorderHover: "hover:border-accent-red",
     accentShadowHover: "hover:shadow-[0_0_35px_-5px_rgba(255,77,109,0.25)]",
     flowNodes: [
-      { name: "Intake Agent", role: "Order Ingestion & Parse" },
-      { name: "SCM Intelligence", role: "Route & Inventory Optimization" },
-      { name: "Compliance Node", role: "Tariff & Regulatory Classification" },
-      { name: "Process Orchestrator", role: "Cyclic Error Detection" },
-      { name: "Carrier Dispatch", role: "Autonomous Reroute Execution" }
+      { name: "Monitor Agent", role: "<1ms Local Disruption Rule Engine" },
+      { name: "Risk Assessor", role: "Gemini 2.5 Flash Exposure & SLA Scoring" },
+      { name: "Routing Solver", role: "<5ms Deterministic OR Landed Cost (₹)" },
+      { name: "Validator Agent", role: "Groq LPU (~13ms) Physical Constraint Check" },
+      { name: "Explainer Agent", role: "Gemini 2.5 Flash Audited CSCO Briefing" }
     ],
     content: [
-      "Built a 5-agent autonomous SCM system (LangGraph cyclic StateGraph) with Intake, SCM Intelligence, Compliance & Tariff Classifier, Process Orchestration, and External Carrier nodes.",
-      "Implemented self-correcting cyclic error-handling: autonomously reroutes logistics (e.g. LA -> Seattle) during carrier booking failures under simulated port congestion, cutting simulated SLA breaches from 2% to <0.1%.",
-      "Modelled projected enterprise savings of $310K/month ($215K from automating manual processing, $95K from autonomous SLA-breach prevention via reroute loops).",
-      "Designed hybrid multi-LLM orchestration across Gemini 2.5 Flash (complex reasoning) and Groq Mistral (fast routing), secured by InputGuard/OutputGuard prompt injection intercepts.",
-      "Persisted agent decisions and carrier coordinates into a MySQL/SQLite audit ledger with a 3-tab Streamlit dashboard: SCM Control Center, Audit Trail, and Executive AI Analytics Report."
+      "Engineered an autonomous Indian supply chain disruption response system (ET GenAI Hackathon 2026) managing high-density freight corridors (Pune/Surat/Ahmedabad -> JNPT/Mundra/Chennai -> Bhiwandi/Bilaspur/Nelamangala -> Retail zones) across 25 FMCG SKUs.",
+      "Enforced core engineering paradigm: 'The LLM Must NOT Do the Math' — built an exhaustive deterministic Operations Research (OR) solver core minimizing Total Landed Cost (Freight, Handling, Delay Penalties in ₹) and transit days without arithmetic hallucinations.",
+      "Architected an explicit multi-model routing split: Google Gemini 2.5 Flash for contextual disruption risk & executive CSCO briefings, paired with Groq LPU (~13ms) for ultra-low latency physical constraint validation (warehouse caps, carrier fleet quotas).",
+      "Benchmarked across 100 randomized disruption scenarios (eval/benchmark_100.py, seed=42): achieved 100.0% resolution success rate, avoiding ₹2,722,863.88 (~₹27.2 Lakhs) in unmitigated late penalties and 408.0 total delay days (4.08 days avg/order) in 4.72s runtime.",
+      "Integrated full carrier network (Safexpress, Delhivery Surface, TCI Express, Blue Dart) with FastAPI REST server, Streamlit Control Tower dashboard, Docker Compose, and 20/20 passing pytest suite."
     ],
-    badges: ["ET GenAI Hackathon 2026", "LangGraph Cyclic StateGraph", "Savings: $310K/mo"],
+    badges: ["ET GenAI Hackathon 2026", "Deterministic OR Solver", "₹27.2L+ Loss Avoided", "Gemini 2.5 Flash + Groq LPU", "100% Resolved (100/100)", "20/20 Tests Passing"],
     link: "https://github.com/sounakss7/SCM_AGENTIC_WORKFLOW",
     demoLink: "https://scmworkflow.streamlit.app"
   },

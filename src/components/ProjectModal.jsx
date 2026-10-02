@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, GitBranch, Layers, Sliders, CheckCircle2, AlertTriangle, ShieldCheck, Cpu, Database, Network, Code } from 'lucide-react';
+import { X, ExternalLink, GitBranch, Layers, Sliders, CheckCircle2, AlertTriangle, ShieldCheck, Cpu, Database, Network, Code, Truck, Activity } from 'lucide-react';
 import { sounds } from '../utils/soundEffects';
 
 const GithubIcon = () => (
@@ -14,6 +14,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
   const [radius, setRadius] = useState(14.1);
   const [texture, setTexture] = useState(19.2);
   const [concavePoints, setConcavePoints] = useState(0.048);
+  const [scmDisruption, setScmDisruption] = useState('strike');
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -332,6 +333,150 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                     className="text-blue-400 hover:underline font-bold flex items-center gap-1"
                   >
                     View FastAPI Engine Repo <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            )}
+
+            {/* Interactive Indian SCM Resilience Disruption Simulator (SCM_AGENTIC_WORKFLOW) */}
+            {project.id === 'scm-workflow' && (
+              <div className="my-6 p-6 bg-obsidian/90 border border-accent-red/40 rounded-2xl shadow-xl font-code text-xs">
+                <div className="flex flex-wrap items-center justify-between pb-4 border-b border-border-subtle mb-5 gap-2">
+                  <span className="text-accent-red uppercase tracking-wider flex items-center gap-2 font-semibold">
+                    <Truck className="w-4 h-4 text-accent-red" /> Indian Logistics Corridor Disruption Simulator
+                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/30 font-bold">
+                      20/20 TESTS PASSING
+                    </span>
+                    <span className="text-[10px] text-accent-cyan bg-accent-cyan/10 px-2.5 py-1 rounded-md border border-accent-cyan/30 font-bold">
+                      100% RESOLVED (100/100)
+                    </span>
+                  </div>
+                </div>
+
+                {/* Scenario Switcher Tabs */}
+                <div className="flex flex-wrap items-center gap-2 mb-5">
+                  <span className="text-text-muted text-[11px] mr-1">Simulate Incident:</span>
+                  <button
+                    onClick={() => {
+                      sounds.click();
+                      setScmDisruption('strike');
+                    }}
+                    className={`px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
+                      scmDisruption === 'strike'
+                        ? 'bg-accent-red/15 border-accent-red text-accent-red font-bold shadow-[0_0_15px_rgba(255,77,109,0.2)]'
+                        : 'bg-surface border-border-subtle text-text-muted hover:text-text-primary'
+                    }`}
+                  >
+                    Transporter Strike (Safexpress Halted)
+                  </button>
+                  <button
+                    onClick={() => {
+                      sounds.click();
+                      setScmDisruption('port_dwell');
+                    }}
+                    className={`px-3 py-1.5 rounded-lg border text-[11px] transition-all ${
+                      scmDisruption === 'port_dwell'
+                        ? 'bg-accent-red/15 border-accent-red text-accent-red font-bold shadow-[0_0_15px_rgba(255,77,109,0.2)]'
+                        : 'bg-surface border-border-subtle text-text-muted hover:text-text-primary'
+                    }`}
+                  >
+                    JNPT Port Berth Dwell Spike (72h)
+                  </button>
+                </div>
+
+                {/* Scenario Comparison Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+                  {/* Nominal Plan Block */}
+                  <div className="p-4 bg-surface rounded-xl border border-border-subtle">
+                    <div className="flex items-center justify-between text-text-muted mb-2">
+                      <span className="font-bold text-text-primary">Nominal Baseline Plan</span>
+                      <span className="text-[10px] text-accent-red bg-accent-red/10 px-2 py-0.5 rounded border border-accent-red/30">
+                        {scmDisruption === 'strike' ? 'BLOCKED BY STRIKE' : 'BLOCKED BY PORT CONGESTION'}
+                      </span>
+                    </div>
+                    <div className="space-y-1.5 text-[11px] text-text-muted">
+                      <div>Corridor: <span className="text-text-primary">Pune → JNPT Port → Bhiwandi Hub → Mumbai</span></div>
+                      <div>Carrier: <span className="text-text-primary">Safexpress (₹0.08/km · 450 km/day)</span></div>
+                      <div>Total Landed Cost: <span className="text-text-primary font-bold">₹866.00</span></div>
+                      <div>Unmitigated Delay Penalty: <span className="text-accent-red font-bold">₹35,000.00 / day</span></div>
+                    </div>
+                  </div>
+
+                  {/* Autonomous OR Solver Re-routed Block */}
+                  <div className="p-4 bg-surface rounded-xl border border-emerald-500/40 shadow-sm">
+                    <div className="flex items-center justify-between text-emerald-400 mb-2 font-bold">
+                      <span className="flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5" /> Deterministic OR Re-Route Plan
+                      </span>
+                      <span className="text-[10px] bg-emerald-500/15 px-2 py-0.5 rounded border border-emerald-500/30">
+                        OPTIMAL FEASIBLE
+                      </span>
+                    </div>
+                    <div className="space-y-1.5 text-[11px] text-text-muted">
+                      <div>
+                        Corridor: <span className="text-emerald-400 font-bold">
+                          {scmDisruption === 'strike' ? 'Pune → Mundra Port → Bhiwandi Hub (via Delhivery)' : 'Pune → Bilaspur Hub → Mumbai (Bypassing JNPT)'}
+                        </span>
+                      </div>
+                      <div>Carrier Assigned: <span className="text-text-primary">Delhivery Surface (₹0.10/km · 600 km/day)</span></div>
+                      <div>Re-routed Landed Cost: <span className="text-emerald-400 font-bold">₹920.00 (+₹54 delta)</span></div>
+                      <div>Excess Delay Avoided: <span className="text-emerald-400 font-bold">0.0 days (₹34,946 saved!)</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 5-Agent Multi-Model Execution Telemetry Breakdown */}
+                <div className="p-4 bg-surface rounded-xl border border-border-subtle mb-4">
+                  <div className="text-text-primary font-bold mb-3 flex items-center justify-between">
+                    <span className="flex items-center gap-1.5"><Activity className="w-3.5 h-3.5 text-accent-red" /> 5-Agent Multi-Model StateGraph Telemetry</span>
+                    <span className="text-[10px] text-text-muted">TOTAL RESOLUTION TIME: 98ms</span>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-5 gap-2 text-[10px]">
+                    <div className="p-2.5 bg-obsidian rounded-lg border border-border-subtle">
+                      <div className="text-text-muted">1. Monitor Agent</div>
+                      <div className="text-accent-cyan font-bold mt-1">Rule Engine</div>
+                      <div className="text-[9px] text-text-muted">&lt;1 ms · Strike Detected</div>
+                    </div>
+                    <div className="p-2.5 bg-obsidian rounded-lg border border-border-subtle">
+                      <div className="text-text-muted">2. Risk Assessor</div>
+                      <div className="text-purple-400 font-bold mt-1">Gemini 2.5 Flash</div>
+                      <div className="text-[9px] text-text-muted">39.8 ms · ₹35K SLA Risk</div>
+                    </div>
+                    <div className="p-2.5 bg-obsidian rounded-lg border border-border-subtle">
+                      <div className="text-text-muted">3. Routing Solver</div>
+                      <div className="text-emerald-400 font-bold mt-1">OR Solver Core</div>
+                      <div className="text-[9px] text-text-muted">4.2 ms · Min TLC in ₹</div>
+                    </div>
+                    <div className="p-2.5 bg-obsidian rounded-lg border border-border-subtle">
+                      <div className="text-text-muted">4. Validator Agent</div>
+                      <div className="text-accent-amber font-bold mt-1">Groq LPU (Llama 3.3)</div>
+                      <div className="text-[9px] text-text-muted">12.8 ms · Caps Verified</div>
+                    </div>
+                    <div className="p-2.5 bg-obsidian rounded-lg border border-border-subtle">
+                      <div className="text-text-muted">5. Explainer Agent</div>
+                      <div className="text-purple-400 font-bold mt-1">Gemini 2.5 Flash</div>
+                      <div className="text-[9px] text-text-muted">41.1 ms · CSCO Briefing</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Audited Benchmark Summary Strip */}
+                <div className="p-3 bg-accent-red/10 border border-accent-red/20 rounded-xl text-[11px] text-text-muted flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex flex-wrap items-center gap-4">
+                    <span>⚡ 100 Scenarios Benchmark (eval/benchmark_100.py)</span>
+                    <span className="text-emerald-400 font-bold">₹2,722,863.88 (~₹27.2L) Loss Avoided</span>
+                    <span className="text-text-primary font-bold">408.0 Days Delay Avoided</span>
+                  </div>
+                  <a
+                    href="https://github.com/sounakss7/SCM_AGENTIC_WORKFLOW"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent-red hover:underline font-bold flex items-center gap-1 shrink-0"
+                  >
+                    View SCM Repository <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
               </div>

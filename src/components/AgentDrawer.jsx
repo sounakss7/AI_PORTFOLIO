@@ -21,12 +21,12 @@ const knowledgeBase = [
     latency: '11ms'
   },
   {
-    keywords: ['scm', 'supply chain', 'savings', '310k', 'carrier', 'logistics', 'hackathon'],
-    title: 'Autonomous SCM Agentic Workflow ($310K/mo Savings)',
-    answer: `The SCM Agentic Workflow is an autonomous 5-agent system engineered in LangGraph (cyclic StateGraph) for supply chain resilience.\n\nKey Innovations:\n• 5 specialized nodes: Intake Agent, SCM Intelligence, Compliance & Tariff Classifier, Process Orchestration, and Carrier Dispatch.\n• Self-correcting cyclic error loops: When port congestion occurs (e.g. simulated LA port delay), the system autonomously reroutes logistics (e.g. LA -> Seattle Harbor), slashing SLA breaches from 2.0% to <0.1%.\n• Projected Enterprise Value: $310,000/month ($215K in automated manual order processing + $95K in SLA penalty prevention).\n• Qualified for ET GenAI Hackathon 2026 Phase 2 (Top 6K out of 55,000+ teams).\n• Live deployment: scmworkflow.streamlit.app`,
+    keywords: ['scm', 'supply chain', 'savings', '27.2l', 'logistics', 'hackathon', 'or solver', 'corridor', 'transporter', 'delhivery', 'safexpress', 'jnpt'],
+    title: 'Indian SCM Resilience Agent (₹27.2L+ Saved · ET GenAI 2026)',
+    answer: `The Indian Supply Chain Resilience Agent (github.com/sounakss7/SCM_AGENTIC_WORKFLOW) is an autonomous 5-agent LangGraph system engineered for the ET Gen AI Hackathon 2026, protecting high-density Indian logistics corridors (Pune/Surat/Ahmedabad -> JNPT/Mundra/Chennai -> Bhiwandi/Bilaspur/Nelamangala -> Retail Zones) across 25 FMCG SKUs.\n\nCore Architectural Innovations:\n• "The LLM Must NOT Do the Math" Principle: All network routing, transit durations, capacity filtering, and Total Landed Cost (TLC) minimization in INR (₹) are executed by an exhaustive deterministic Operations Research (OR) solver core (<5ms), completely eliminating combinatorial arithmetic hallucinations.\n• Multi-Model Inference Split: Google Gemini 2.5 Flash (~40ms) handles contextual disruption risk assessment & plain-English CSCO executive briefings; Groq LPU (~13ms) performs ultra-low latency physical constraint validation (warehouse pallet caps, carrier daily vehicle allocations).\n• 5-Agent Orchestration Flow: Monitor Agent (<1ms local rule engine) -> Risk Assessor (Gemini) -> Routing Agent (OR Solver) -> Validator Agent (Groq LPU) -> Explainer Agent (Gemini) -> FastAPI REST & Streamlit Control Tower UI.\n• Audited 100-Disruption Benchmark (eval/benchmark_100.py, seed=42): 100.0% resolution success rate, ₹2,722,863.88 (~₹27.2 Lakhs) in financial loss avoided, and 408.0 total delivery delay days avoided (4.08 days avg/order).\n• Enterprise Reliability: 20/20 passing pytest suite, Docker Compose deployment, and live Streamlit Control Tower.`,
     sectionTarget: 'projects',
-    confidence: '98.9%',
-    latency: '22ms'
+    confidence: '99.6%',
+    latency: '16ms'
   },
   {
     keywords: ['cancer', 'xgboost', 'accuracy', '98%', 'breast', 'medical', 'clinical', 'shap'],
@@ -74,7 +74,7 @@ const presetQuestions = [
   "Explain NexusRAG (GraphRAG + FastAPI)",
   "What is Patent #202631059925 (AGENT_MIND)?",
   "What does Sounak do at Trafasa?",
-  "How does the SCM workflow save $310K?",
+  "How does the Indian SCM Agent save ₹27.2L?",
   "Show Breast Cancer Detection metrics",
   "What is Sounak's core tech stack?"
 ];
@@ -104,7 +104,8 @@ const evaluatePortfolioScope = (query) => {
     'contact', 'email', 'hire', 'hiring', 'github', 'linkedin', 'phone', 'kolkata', 'location',
     'selfrouter', 'guardrail', 'guard', 'luhn', 'pii', 'moa', 'mistral', 'gemini', 'groq',
     'deepseek', 'kimi', 'tavily', 'pollinations', 'tesseract', 'ocr', 'audit', 'security',
-    'who are you', 'what can you do', 'help', 'overview', 'skills', 'stack', 'technologies'
+    'who are you', 'what can you do', 'help', 'overview', 'skills', 'stack', 'technologies',
+    'or solver', 'corridor', 'transporter', 'delhivery', 'safexpress', 'jnpt', 'bhiwandi'
   ];
 
   const hasRelevantTerm = inScopeTerms.some((term) => q.includes(term));
@@ -113,7 +114,7 @@ const evaluatePortfolioScope = (query) => {
       isRelevant: true,
       match: {
         title: 'Neural Portfolio Telemetry',
-        answer: `I analyzed your portfolio inquiry: "${query}". Sounak Sarkar is an Agentic AI Developer & SDE Intern at Trafasa, specializing in LangGraph cyclic stategraphs, Indian Patent #202631059925 (AGENT_MIND), NexusRAG (GraphRAG + FastAPI), and 98% accuracy clinical ML systems. Feel free to explore his projects below or connect directly at hrick3130@gmail.com.`,
+        answer: `I analyzed your portfolio inquiry: "${query}". Sounak Sarkar is an Agentic AI Developer & SDE Intern at Trafasa, specializing in LangGraph cyclic stategraphs, Indian Patent #202631059925 (AGENT_MIND), NexusRAG (GraphRAG + FastAPI), and Indian SCM Resilience (₹27.2L+ loss avoided). Feel free to explore his projects below or connect directly at hrick3130@gmail.com.`,
         sectionTarget: 'projects',
         confidence: '95.0%',
         latency: '18ms'
@@ -131,8 +132,8 @@ const evaluatePortfolioScope = (query) => {
       suggestedQueries: [
         "Explain NexusRAG (GraphRAG + Qdrant + FastAPI engine)",
         "What are the claims in Patent #202631059925 (AGENT_MIND)?",
+        "How does the Indian SCM Agent save ₹27.2L in late penalties?",
         "What does Sounak do in his SDE Internship at Trafasa?",
-        "How does the SCM 5-agent system save $310K/month?",
         "Show Breast Cancer Detection 98% accuracy and SHAP",
         "What is Sounak's core tech stack and contact info?"
       ],

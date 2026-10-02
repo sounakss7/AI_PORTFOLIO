@@ -71,7 +71,7 @@ const Contact = () => {
       case 'help':
         newHistory.push({
           type: 'output',
-          text: `Available portfolio commands:\n  • about       - Who is Sounak?\n  • experience  - SDE Internship at Trafasa\n  • patent      - Patent #202631059925 (AGENT_MIND)\n  • nexus       - NexusRAG GraphRAG & FastAPI engine\n  • skills      - Technical matrix & core stack\n  • projects    - Key project highlights\n  • contact     - Email & social links\n  • resume      - Open curriculum vitae\n  • clear       - Clear terminal buffer`
+          text: `Available portfolio commands:\n  • about       - Who is Sounak?\n  • experience  - SDE Internship at Trafasa\n  • patent      - Patent #202631059925 (AGENT_MIND)\n  • nexus       - NexusRAG GraphRAG & FastAPI engine\n  • scm         - Indian SCM Resilience & OR Solver Core\n  • skills      - Technical matrix & core stack\n  • projects    - Key project highlights\n  • contact     - Email & social links\n  • resume      - Open curriculum vitae\n  • clear       - Clear terminal buffer`
         });
         break;
       case 'about':
@@ -97,7 +97,15 @@ const Contact = () => {
       case 'projects':
         newHistory.push({
           type: 'output',
-          text: 'Key Works: 1) Agent Mind (Patent #202631059925), 2) NexusRAG (GraphRAG + FastAPI), 3) SCM Workflow ($310K/mo savings), 4) Breast Cancer Detection (98% Accuracy).'
+          text: 'Key Works: 1) Agent Mind (Patent #202631059925), 2) NexusRAG (GraphRAG + FastAPI), 3) Indian SCM Resilience (Deterministic OR Solver + ₹27.2L+ Saved), 4) Breast Cancer Detection (98% Accuracy).'
+        });
+        break;
+      case 'scm':
+      case 'supply_chain':
+      case 'or_solver':
+        newHistory.push({
+          type: 'output',
+          text: 'Indian SCM Resilience Agent (github.com/sounakss7/SCM_AGENTIC_WORKFLOW): 5-agent LangGraph system with Deterministic OR Solver Core ("The LLM Must NOT Do the Math") across Indian logistics corridors (Pune/Surat -> JNPT/Mundra -> Bhiwandi/Bilaspur). Audited: 100/100 resolved, ₹27.2L+ loss avoided, 408 delay days saved.'
         });
         break;
       case 'patent':

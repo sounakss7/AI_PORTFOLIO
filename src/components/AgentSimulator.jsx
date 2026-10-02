@@ -34,16 +34,16 @@ const scenarios = [
   },
   {
     id: 'scm-reroute',
-    name: 'SCM Autonomous // Cyclic Port Congestion Reroute',
-    description: 'Simulating Los Angeles port congestion and autonomous self-healing logistics loop.',
-    accentColor: 'text-accent-amber',
-    borderColor: 'border-accent-amber',
+    name: 'Indian SCM Resilience // Transporter Strike Re-Route',
+    description: 'Simulating Safexpress strike on Pune -> JNPT corridor, deterministic OR cost minimization, and Groq LPU constraint check.',
+    accentColor: 'text-accent-red',
+    borderColor: 'border-accent-red',
     steps: [
-      { node: 'Intake Agent', status: 'PARSED', detail: 'Parsed 1,400 TEU container shipment order', latency: '5ms' },
-      { node: 'Compliance Node', status: 'VERIFIED', detail: 'International tariff codes and customs declarations validated', latency: '9ms' },
-      { node: 'Carrier Dispatch', status: 'BLOCKED', detail: 'FAILURE DETECTED: 72hr severe berth congestion at Port of LA', latency: '18ms' },
-      { node: 'LangGraph Cyclic Loop', status: 'REROUTED', detail: 'Self-correcting cyclic graph triggered reroute: LA -> Seattle Harbor', latency: '14ms' },
-      { node: 'SLA Optimizer', status: 'SAVED', detail: 'Delivery schedule preserved. Projected SLA penalty avoided: $95,000', latency: '7ms' }
+      { node: 'Monitor Agent', status: 'ALERT', detail: 'Transporter disruption detected: Safexpress declared 100% halted on Pune -> JNPT link', latency: '<1ms' },
+      { node: 'Risk Assessor (Gemini)', status: 'SCORED', detail: 'Delay penalty risk assessed: ₹35,000/day across 10 units of Aashirvaad Atta', latency: '40ms' },
+      { node: 'Routing Solver (OR Core)', status: 'OPTIMIZED', detail: 'Deterministic OR solver re-assigned link to Delhivery Surface (TLC: ₹920, delta: +₹54)', latency: '4ms' },
+      { node: 'Validator Agent (Groq LPU)', status: 'APPROVED', detail: 'Rapid physical constraint verification passed: Bhiwandi warehouse cap & carrier quotas clear', latency: '13ms' },
+      { node: 'Explainer Agent (Gemini)', status: 'BRIEFED', detail: 'Audited CSCO executive briefing generated: 0.0 delay days, ₹34,946 net loss avoided', latency: '39ms' }
     ]
   },
   {
